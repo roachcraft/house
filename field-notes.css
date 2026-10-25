@@ -1,0 +1,274 @@
+
+/* FIELD NOTES — THE WRITING DESK */
+
+.field-notes-page {
+  max-width: 940px;
+}
+
+.notes-intro {
+  max-width: 560px;
+  margin-bottom: 100px;
+}
+
+.notes-intro h1 {
+  margin: 0 0 32px;
+}
+
+.notes-intro > p {
+  margin: 0 0 18px;
+}
+
+.desk-label,
+.desk-whisper {
+  color: var(--faded, #89867d);
+  font-size: .76rem;
+}
+
+.desk-label {
+  margin-bottom: 28px !important;
+}
+
+/* THE DESK SURFACE */
+
+.notes-desk {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 55px 30px;
+  padding: 65px 32px 80px;
+  border: 1px solid #dbd2c1;
+  background: #e3dbcb;
+  background-image:
+    repeating-linear-gradient(
+      92deg,
+      transparent 0 54px,
+      #a19a8a0b 55px 56px
+    );
+  isolation: isolate;
+}
+
+/* ALL PAPERS */
+
+.desk-paper {
+  --tilt: -2deg;
+
+  position: relative;
+  flex: 1 1 295px;
+  max-width: 465px;
+  min-width: 0;
+  padding: 27px 25px 30px;
+
+  color: #302e2a;
+  background: #fffdf5;
+  border: 1px solid #dfd8c9;
+  box-shadow: 6px 8px 12px #584b3930;
+
+  transform: rotate(var(--tilt));
+  transition: transform 180ms ease;
+}
+
+/* AUTOMATIC CROOKEDNESS */
+
+.desk-paper:nth-of-type(3n+2) {
+  --tilt: 4deg;
+  margin-top: 33px;
+}
+
+.desk-paper:nth-of-type(3n+3) {
+  --tilt: -5deg;
+  margin-top: 5px;
+}
+
+.desk-paper:hover,
+.desk-paper:focus-within {
+  transform: rotate(0) translateY(-4px);
+  z-index: 2;
+}
+
+/* PAPER CONTENT */
+
+.desk-paper h2 {
+  margin: 0 0 20px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.desk-paper p {
+  margin: 0 0 20px;
+  font-size: .87rem;
+  line-height: 1.7;
+}
+
+.desk-paper p:last-child {
+  margin-bottom: 0;
+}
+
+.paper-meta {
+  color: #868075;
+  font-size: .66rem !important;
+  margin: 0 0 27px !important;
+}
+
+/* FOLDABLE NOTES */
+
+.desk-paper details {
+  margin-top: 30px;
+  font-size: .78rem;
+}
+
+.desk-paper summary {
+  width: fit-content;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.desk-paper details p {
+  padding-top: 13px;
+  margin: 0;
+  font-size: .79rem;
+}
+
+/* TYPE 1: LOOSE LETTER */
+
+.paper--letter {
+  min-height: 330px;
+}
+
+.paper--letter::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 40%;
+  width: 90px;
+  height: 24px;
+  background: #d8c9a782;
+  transform: rotate(-5deg);
+}
+
+/* TYPE 2: LINED NOTEBOOK PAGE */
+
+.paper--notebook {
+  background-color: #f8f7ed;
+  background-image:
+    repeating-linear-gradient(
+      transparent 0 33px,
+      #b4c2c22a 34px 35px
+    );
+  border-left: 4px double #c8aaa0;
+}
+
+/* TYPE 3: PHOTOGRAPH */
+
+.paper--photo {
+  background: #f7f5eb;
+}
+
+.paper--photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 22px;
+  border: 1px solid #d6d1c6;
+}
+
+/* TYPE 4: SMALL SCRAP */
+
+.paper--small {
+  flex-basis: 245px;
+  max-width: 335px;
+}
+
+/* NOTE TO SELF */
+
+.desk-sticky {
+  flex: 0 1 190px;
+  align-self: center;
+  margin: 0 0 15px;
+  padding: 22px 18px 35px;
+
+  background: #ece6a5;
+  color: #5b5844;
+  font-size: .77rem;
+  line-height: 1.75;
+
+  transform: rotate(9deg);
+  box-shadow: 4px 7px 8px #584b3926;
+}
+
+/* SOMETHING UNDERNEATH */
+
+.desk-secret {
+  width: fit-content;
+  margin: 70px 0 0 auto;
+  font-size: .73rem;
+  color: var(--faded, #89867d);
+}
+
+.desk-secret summary {
+  cursor: pointer;
+}
+
+.desk-secret p {
+  color: var(--ink, #262521);
+}
+
+/* SMALLER WINDOWS */
+
+@media (max-width: 650px) {
+  .notes-intro {
+    margin-bottom: 65px;
+  }
+
+  .notes-desk {
+    padding: 38px 20px 50px;
+    gap: 38px;
+  }
+
+  .desk-paper {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 25px 19px;
+  }
+
+  .desk-paper:nth-of-type(3n+2),
+  .desk-paper:nth-of-type(3n+3) {
+    margin-top: 0;
+  }
+
+  .desk-sticky {
+    flex-basis: 60%;
+    margin: 5px auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-paper {
+    transition: none;
+  }
+}
+
+
+/* THE WRITING DESK */
+
+.notes-desk {
+  background-color: #ad8864;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 247, 225, 0.13),
+      rgba(58, 37, 19, 0.12)
+    ),
+    url("./assets/textures/wood.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 5px solid #927255;
+
+  box-shadow:
+    inset 0 0 35px rgba(48, 29, 14, 0.20),
+    5px 7px 0 rgba(48, 29, 14, 0.08);
+}

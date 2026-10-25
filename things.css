@@ -1,0 +1,432 @@
+/* things: a loosely arranged drawer of objects.
+   This file builds on the shared style.css from the rest of roachcraft. */
+
+.things-page {
+  max-width: 
+/* things: a loosely arranged drawer of objects.
+   This file builds on the shared style.css from the rest of roachcraft. */
+
+.things-page {
+  max-width: 860px;
+  padding-bottom: 150px;
+}
+
+.drawer-intro {
+  max-width: 570px;
+  margin-bottom: clamp(72px, 12vw, 140px);
+}
+
+.drawer-marker {
+  margin: 0 0 28px;
+  color: var(--faded, #89867d);
+  font-size: 0.72rem;
+  letter-spacing: 0.025em;
+}
+
+.drawer-intro h1,
+.specimen-heading h1 {
+  margin: 0 0 35px;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.drawer-intro > p:not(.drawer-marker) {
+  max-width: 510px;
+  margin: 0 0 1.5rem;
+}
+
+.drawer-whisper {
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+}
+
+/* The drawer is deliberately composed, rather than a tidied-up grid.
+   Each item gets its own size, tilt, and resting place. */
+
+.object-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 10px;
+  row-gap: 38px;
+  max-width: 850px;
+  padding: 12px 22px 50px;
+  position: relative;
+  isolation: isolate;
+}
+
+.object-card {
+  min-width: 0;
+  position: relative;
+  transform: rotate(var(--tilt, 0deg));
+  transform-origin: center center;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+/* A lopsided arrangement — not a two-column gallery with offsets. */
+
+.object-card--broccoli {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+  margin-top: 20px;
+  --tilt: -5deg;
+  z-index: 3;
+}
+
+.object-card--fearless {
+  grid-column: 9 / span 4;
+  grid-row: 1;
+  margin-top: 133px;
+  --tilt: 7deg;
+  z-index: 2;
+}
+
+.object-card--dirty-thoughts {
+  grid-column: 2 / span 5;
+  grid-row: 2;
+  margin-top: -18px;
+  --tilt: 6deg;
+  z-index: 2;
+}
+
+.object-card--being-human {
+  grid-column: 8 / span 5;
+  grid-row: 2;
+  margin-top: -72px;
+  --tilt: -7deg;
+  z-index: 4;
+}
+
+/* Paper backing and slight shadow;
+   each object is actually somewhere. */
+
+.object-card figure {
+  margin: 0;
+  padding: clamp(9px, 1.3vw, 15px);
+  border: 1px solid #d5d0c3;
+  background: #fffef9;
+  box-shadow: 5px 7px 0 rgb(69 63 43 / 9%);
+}
+
+.object-card--fearless figure {
+  background: #f1eddf;
+  padding-bottom: 24px;
+}
+
+.object-card--dirty-thoughts figure {
+  background: #f8f1dc;
+}
+
+.object-card--being-human figure {
+  background: #fdfbf6;
+  padding: 11px 11px 20px;
+}
+
+.object-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line, #ddd9cf);
+}
+
+.object-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.object-link:focus-visible {
+  outline: 2px dashed currentColor;
+  outline-offset: 10px;
+}
+
+.object-link:hover figure,
+.object-link:focus-visible figure {
+  box-shadow: 8px 11px 0 rgb(69 63 43 / 12%);
+}
+
+.object-card:has(.object-link):hover {
+  transform: rotate(calc(var(--tilt, 0deg) * 0.45)) translateY(-9px);
+  z-index: 5;
+}
+
+.object-card figcaption {
+  margin-top: 12px;
+}
+
+.object-title,
+.object-detail {
+  display: block;
+}
+
+.object-title {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.object-detail,
+.object-hint {
+  color: var(--faded, #89867d);
+  font-size: 0.72rem;
+}
+
+.object-detail {
+  margin-top: 3px;
+}
+
+.object-hint {
+  margin: 10px 0 0 4px;
+}
+
+/* A stray slip lives in the negative space,
+   not in a separate gallery tile. */
+
+.drawer-slip {
+  grid-column: 7 / span 3;
+  grid-row: 1;
+  align-self: start;
+  z-index: 1;
+  width: 195px;
+  max-width: 125%;
+  margin: 32px 0 0 -5px;
+  padding: 16px 13px 20px;
+  background: #f3eebf;
+  border: 1px solid #e0d9a5;
+  color: #65604a;
+  box-shadow: 3px 5px 0 rgb(69 63 43 / 7%);
+  transform: rotate(8deg);
+  font-size: 0.69rem;
+  line-height: 1.5;
+}
+
+.drawer-ending {
+  margin-top: 170px;
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+}
+
+/* A single object's own page */
+
+.specimen-page {
+  max-width: 690px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+  text-underline-offset: 4px;
+  margin-bottom: 70px;
+}
+
+.specimen-heading {
+  margin-bottom: 46px;
+}
+
+.specimen-heading h1 {
+  margin-bottom: 0;
+}
+
+.specimen-photo {
+  margin: 0 0 50px;
+  max-width: 610px;
+}
+
+.specimen-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.specimen-photo figcaption {
+  color: var(--faded, #89867d);
+  font-size: 0.75rem;
+  margin-top: 14px;
+}
+
+.specimen-copy {
+  max-width: 570px;
+}
+
+.specimen-copy p {
+  margin: 0 0 28px;
+}
+
+.specimen-footnote {
+  margin-top: 75px;
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+}
+
+.specimen-footnote a {
+  color: inherit;
+}
+
+/* On narrow screens, the drawer becomes a staggered pile. */
+
+@media (max-width: 700px) {
+  .object-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 55px;
+    padding: 12px 18px 30px;
+  }
+
+  .object-card--broccoli {
+    width: 88%;
+    margin: 0 0 0 1%;
+  }
+
+  .object-card--fearless {
+    width: 73%;
+    margin: 0 0 0 auto;
+  }
+
+  .object-card--dirty-thoughts {
+    width: 82%;
+    margin: 0 0 0 0;
+  }
+
+  .object-card--being-human {
+    width: 90%;
+    margin: 0 0 0 auto;
+  }
+
+  .drawer-slip {
+    width: 185px;
+    max-width: 70%;
+    margin: -27px 4% -12px auto;
+    align-self: flex-end;
+  }
+
+  .drawer-ending {
+    margin-top: 105px;
+  }
+
+  .back-link {
+    margin-bottom: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .object-card {
+    transition: none;
+  }
+}
+860px;
+  padding-bottom: 150px;
+}
+
+.drawer-intro {
+  max-width: 570px;
+  margin-bottom: clamp(72px, 12vw, 140px);
+}
+
+.drawer-marker {
+  margin: 0 0 28px;
+  color: var(--faded, #89867d);
+  font-size: 0.72rem;
+  letter-spacing: 0.025em;
+}
+
+.drawer-intro h1,
+.specimen-heading h1 {
+  margin: 0 0 35px;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.drawer-intro > p:not(.drawer-marker) {
+  max-width: 510px;
+  margin: 0 0 1.5rem;
+}
+
+.drawer-whisper {
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+}
+
+.object-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  column-gap: clamp(28px, 7vw, 95px);
+  row-gap: 90px;
+  max-width: 820px;
+}
+
+.object-card { min-width: 0; }
+.object-card:nth-child(even) { margin-top: 75px; }
+.object-card:nth-child(3) { margin-left: 20px; }
+
+.object-card figure { margin: 0; }
+.object-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line, #ddd9cf);
+  transition: transform 180ms ease;
+}
+
+.object-link { display: block; color: inherit; text-decoration: none; }
+.object-link:hover img,
+.object-link:focus-visible img { transform: translateY(-5px) rotate(-0.7deg); }
+.object-link:focus-visible { outline: 2px dashed currentColor; outline-offset: 8px; }
+
+.object-card figcaption { margin-top: 14px; }
+.object-title,
+.object-detail { display: block; }
+.object-title { font-size: 0.9rem; }
+.object-detail,
+.object-hint {
+  color: var(--faded, #89867d);
+  font-size: 0.72rem;
+}
+.object-detail { margin-top: 3px; }
+.object-hint { margin: 10px 0 0; }
+
+.drawer-ending {
+  margin-top: 160px;
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+}
+
+/* A single object's own page */
+.specimen-page { max-width: 690px; }
+.back-link {
+  display: inline-block;
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+  text-underline-offset: 4px;
+  margin-bottom: 70px;
+}
+.specimen-heading { margin-bottom: 46px; }
+.specimen-heading h1 { margin-bottom: 0; }
+.specimen-photo { margin: 0 0 50px; max-width: 610px; }
+.specimen-photo img { display: block; width: 100%; height: auto; }
+.specimen-photo figcaption {
+  color: var(--faded, #89867d);
+  font-size: 0.75rem;
+  margin-top: 14px;
+}
+.specimen-copy { max-width: 570px; }
+.specimen-copy p { margin: 0 0 28px; }
+.specimen-footnote {
+  margin-top: 75px;
+  color: var(--faded, #89867d);
+  font-size: 0.78rem;
+}
+.specimen-footnote a { color: inherit; }
+
+@media (max-width: 600px) {
+  .object-grid { grid-template-columns: 1fr; row-gap: 65px; }
+  .object-card:nth-child(even) { margin-top: 0; }
+  .object-card:nth-child(3) { margin-left: 0; }
+  .object-card { max-width: 480px; }
+  .drawer-ending { margin-top: 95px; }
+  .back-link { margin-bottom: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .object-card img { transition: none; }
+}

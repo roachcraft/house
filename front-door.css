@@ -21,7 +21,7 @@
 .threshold-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
-  align-items: center;
+  align-items: start;
   gap: clamp(40px, 8vw, 120px);
 }
 
@@ -305,7 +305,52 @@
   transform: perspective(250px) rotateX(18deg);
 
   box-shadow: 2px 4px 0 rgba(52, 43, 27, .08);
+
 }
+
+
+/* POLITE DOORMAT */
+
+.threshold-doormat {
+  position: relative;
+}
+
+.threshold-doormat summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+}
+
+.threshold-doormat summary::-webkit-details-marker {
+  display: none;
+}
+
+.threshold-doormat summary:focus-visible {
+  outline: 2px dashed var(--ink);
+  outline-offset: 4px;
+}
+
+/* A SMALL ACKNOWLEDGMENT */
+
+.doormat-thanks {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  padding: 8px 15px;
+
+  background: #f8f4e8;
+  border: 1px solid #cfc3ac;
+
+  color: #5c513e;
+  font-size: 0.7rem;
+
+  box-shadow: 2px 3px 0 rgba(65, 52, 34, 0.12);
+}
+
 
 /* --------------------------------
    ODDITIES AROUND THE ENTRANCE

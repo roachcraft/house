@@ -658,3 +658,21 @@ h1, h2, h3 {
     transition: none;
   }
 }
+
+
+.room-navigation {
+  margin-top: 25px;
+  font-size: 0.8rem;
+}
+
+.room-navigation a {
+  color: var(--faded);
+  text-decoration: none;
+}
+
+.room-navigation a:hover,
+.room-navigation a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}

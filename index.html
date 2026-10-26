@@ -6,19 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>roachcraft</title>
-  <meta name="description" content="a small, occupied corner of the internet.">
+  <meta name="description"
+        content="an occupied corner of cyberspace.">
 
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./front-door.css">
 </head>
 
 <body id="top">
-
   <div class="site">
 
-    <!-- THE TOP OF THE HOUSE -->
     <header class="site-header">
-
-      <a class="site-name" href="#top">
+      <a class="site-name" href="./index.html">
         roachcraft <span class="dot">·</span>
       </a>
 
@@ -29,112 +28,140 @@
         <a href="./sightings.html">sightings</a>
         <a href="./infestations.html">infestations</a>
         <a href="./cockroach.html">cockroach</a>
-        <a href="./index.html">index</a>
+        <a href="./the-record.html">index</a>
       </nav>
-
     </header>
 
-    <main>
+    <main class="threshold-page">
 
-      <!-- THE ENTRANCE -->
-      <section class="entryway">
+      <p class="threshold-label">
+        roachcraft / an occupied corner of cyberspace
+      </p>
 
-        <p class="annotation">
-          an occupied corner of cyberspace
-        </p>
+      <div class="threshold-layout">
 
-        <h1>oh, hello.</h1>
+        <!-- A NOTE FROM THE RESIDENT -->
+        <section class="threshold-greeting">
 
-        <div class="greeting">
-          <p>you found my nest.</p>
+          <h1>oh. hello.</h1>
+
+          <p>you found my place.</p>
 
           <p>
-            i've been building a home
-            in this odd corner of the internet.
+            i've been bringing things home.
           </p>
 
           <p>
-            things have been made.<br>
-            some found.<br>
-            some were here
-            when i arrived.
+            some things i made.<br>
+            some things i found.<br>
+            some things followed me here.
           </p>
 
           <p>
             i'm still sorting things out.
           </p>
 
-          <p>you're welcome to look around.</p>
-        </div>
-
-        <a class="enter-link" href="#index">
-          welcome in →
-        </a>
-
-        <!-- OUR FIRST LITTLE SECRET -->
-        <details class="corner">
-          <summary>please mind your feet.</summary>
           <p>
-            there's something living here.
+            you're welcome to come in.
+          </p>
+
+        </section>
+
+        <!-- THE ACTUAL FRONT DOOR -->
+        <section class="threshold-landing"
+                 aria-label="front door">
+
+          <p class="threshold-wall-note">
+            occupied, apparently.
+          </p>
+
+          <div class="threshold-doorframe">
+
+            <details class="threshold-door">
+
+              <!-- Click this to open the door -->
+              <summary class="threshold-doorleaf">
+
+                <span class="threshold-door-number">
+                  rc. / 000
+                </span>
+
+                <span class="threshold-door-sign">
+                  this entrance<br>
+                  is in use.
+                </span>
+
+                <span class="threshold-doorknob"
+                      aria-hidden="true"></span>
+
+                <span class="threshold-door-prompt">
+                  knock? →
+                </span>
+
+              </summary>
+
+              <!-- WHAT'S BEHIND THE DOOR -->
+              <div class="threshold-inside">
+
+                <p>oh good.<br>you made it.</p>
+
+                <a href="./the-record.html">
+                  look around →
+                </a>
+
+                <small>
+                  please excuse<br>
+                  the state of things.
+                </small>
+
+              </div>
+
+            </details>
+
+          </div>
+
+          <div class="threshold-doormat">
+            please wipe your feet<br>
+            (optional)
+          </div>
+
+        </section>
+      </div>
+
+      <!-- THINGS THAT SEEM UNIMPORTANT -->
+      <div class="threshold-oddities">
+
+        <details class="threshold-mark">
+          <summary aria-label="inspect a suspicious mark">
+            ·
+          </summary>
+          <p>
+            this was here when i moved in.
           </p>
         </details>
 
-      </section>
-
-      <!-- THE DIRECTORY -->
-      <section class="rooms" id="index">
-
-        <p class="annotation">index / contents may vary</p>
-
-        <h2>make yourself comfy.</h2>
-
-        <div class="room-list">
-
-          <article class="room" id="philosophy">
-            <h3>philosophy</h3>
-            <p>some thoughts on the matter.</p>
-          </article>
-
-          <article class="room" id="things">
-            <h3>things</h3>
-            <p>made, found, lived.</p>
-          </article>
-
-          <article class="room" id="field-notes">
-            <h3>field notes</h3>
-            <p>incomplete record of perceptions</p>
-          </article>
-
-          <article class="room" id="sightings">
-            <h3>sightings</h3>
-            <p>things encountered on the surface</p>
-          </article>
-
-          <article class="room" id="infestations">
-            <h3>infestations</h3>
-            <p>public exposures</p>
-          </article>
-
-          <article class="room" id="cockroach">
-            <h3>cockroach</h3>
-            <p>the resident.</p>
-          </article>
-
-        </div>
-
-        <p class="index-note">
-          some rooms are still being unpacked.
+        <p class="threshold-corner-note">
+          please mind the corners.
         </p>
 
-      </section>
+        <a class="threshold-resident"
+           href="./cockroach.html"
+           aria-label="follow the cockroach"
+           title="something is moving">
+          🪳
+        </a>
+
+      </div>
 
     </main>
 
     <footer class="site-footer">
-      <p>roachcraft · established under questionable circumstances</p>
+      <p>
+        roachcraft · established under
+        questionable circumstances
+      </p>
     </footer>
 
   </div>
-
 </body>
 </html>

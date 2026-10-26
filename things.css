@@ -430,3 +430,83 @@
 @media (prefers-reduced-motion: reduce) {
   .object-card img { transition: none; }
 }
+
+
+/* --------------------------------
+   UNFILED BELONGINGS
+   please don't clean this up
+-------------------------------- */
+
+.drawer-clutter {
+  position: absolute;
+
+  width: var(--size, 120px);
+  height: auto;
+
+  transform: rotate(var(--angle, 0deg));
+
+  /* Allow visitors to click artwork underneath */
+  pointer-events: none;
+  user-select: none;
+
+  filter: drop-shadow(
+    3px 5px 3px rgba(42, 32, 20, 0.16)
+  );
+
+  z-index: 1;
+}
+
+/* a little collection of buttons */
+
+.clutter--buttons {
+  --size: 200px;
+  --angle: -13deg;
+
+  top: 5%;
+  left: 48%;
+}
+
+/* an unnecessarily large safety pin */
+
+.clutter--safety-pin {
+  --size: 145px;
+  --angle: 27deg;
+
+  top: 42%;
+  right: -5%;
+
+  z-index: 5;
+}
+
+/* some thread that has gotten away */
+
+.clutter--thread {
+  --size: 220px;
+  --angle: -19deg;
+
+  top: 72%;
+  left: -7%;
+}
+
+/* smaller pockets have smaller contents */
+
+@media (max-width: 700px) {
+
+  .clutter--buttons {
+    --size: 140px;
+    top: 3%;
+    left: 73%;
+  }
+
+  .clutter--safety-pin {
+    --size: 100px;
+    top: 42%;
+    right: -10px;
+  }
+
+  .clutter--thread {
+    --size: 155px;
+    top: 74%;
+    left: -14px;
+  }
+}

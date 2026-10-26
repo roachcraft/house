@@ -1,0 +1,433 @@
+
+/* --------------------------------
+   ROACHCRAFT / THE FRONT DOOR
+   an occupied corner of cyberspace
+-------------------------------- */
+
+.threshold-page {
+  max-width: 960px;
+  min-height: 85vh;
+  padding: clamp(80px, 12vh, 160px) 0 50px;
+}
+
+.threshold-label {
+  color: var(--faded);
+  font-size: .7rem;
+  margin: 0 0 90px;
+}
+
+/* THE SPACE AROUND THE ENTRANCE */
+
+.threshold-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  align-items: center;
+  gap: clamp(40px, 8vw, 120px);
+}
+
+/* GREETING */
+
+.threshold-greeting {
+  max-width: 450px;
+}
+
+.threshold-greeting h1 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0 0 45px;
+}
+
+.threshold-greeting p {
+  margin: 0 0 32px;
+  font-size: .95rem;
+  line-height: 1.9;
+}
+
+/* --------------------------------
+   THE DOOR AND ITS SURROUNDINGS
+-------------------------------- */
+
+.threshold-landing {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 35px 15px 15px;
+}
+
+.threshold-wall-note {
+  position: absolute;
+  top: 0;
+  right: -12px;
+  color: var(--faded);
+  font-size: .68rem;
+  transform: rotate(7deg);
+}
+
+/* DOOR FRAME */
+
+.threshold-doorframe {
+  position: relative;
+  width: 100%;
+  height: 390px;
+
+  padding: 7px;
+
+  border: 7px solid #918471;
+  border-bottom: 4px solid #776b59;
+
+  background: #a89a82;
+
+  box-shadow:
+    4px 7px 0 rgba(55, 42, 25, .12),
+    inset 2px 0 5px rgba(39, 31, 22, .2);
+
+  perspective: 950px;
+}
+
+/* CLICKABLE DOOR */
+
+.threshold-door {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.threshold-doorleaf {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: block;
+  cursor: pointer;
+  list-style: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 33px,
+      rgba(93, 73, 47, .018) 34px 35px
+    ),
+    #eee3cd;
+
+  border: 2px solid #b3a48d;
+
+  box-shadow:
+    inset -12px 0 18px rgba(75, 59, 38, .1),
+    inset 2px 0 3px rgba(255, 255, 255, .4);
+
+  transform-origin: left center;
+  transform-style: preserve-3d;
+
+  transition: transform .7s ease;
+}
+
+.threshold-doorleaf::-webkit-details-marker {
+  display: none;
+}
+
+/* INSET PANEL */
+
+.threshold-doorleaf::before {
+  content: "";
+  position: absolute;
+  inset: 28px 23px 57px;
+
+  border: 3px double #bcae96;
+
+  box-shadow:
+    inset 2px 2px 5px rgba(80, 67, 44, .08);
+
+  pointer-events: none;
+}
+
+/* NUMBER AT THE TOP */
+
+.threshold-door-number {
+  position: absolute;
+  top: 44px;
+  left: 40px;
+
+  font-size: .7rem;
+  color: #857763;
+}
+
+/* A NOTE LEFT ON THE DOOR */
+
+.threshold-door-sign {
+  position: absolute;
+  top: 38%;
+  left: 15%;
+  right: 15%;
+
+  padding: 17px 8px;
+
+  text-align: center;
+  font-size: .8rem;
+  line-height: 1.7;
+
+  color: #5c513e;
+  background: #f8f4e8;
+
+  border: 1px solid #cfc3ac;
+
+  box-shadow: 2px 3px 0 rgba(65, 52, 34, .12);
+
+  transform: rotate(-4deg);
+}
+
+/* THE DOORKNOB */
+
+.threshold-doorknob {
+  position: absolute;
+  right: 17px;
+  top: 53%;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 30% 27%,
+    #f0e4ba,
+    #b8a06b 52%,
+    #73603b
+  );
+
+  border: 1px solid #78623d;
+
+  box-shadow:
+    2px 3px 3px rgba(58, 42, 24, .3);
+}
+
+.threshold-door-prompt {
+  position: absolute;
+  bottom: 27px;
+  right: 32px;
+
+  font-size: .7rem;
+  color: #857763;
+}
+
+/* --------------------------------
+   THE DOOR OPENS
+-------------------------------- */
+
+.threshold-door[open] .threshold-doorleaf {
+  transform: rotateY(-80deg);
+}
+
+/* WHAT LIVES BEHIND IT */
+
+.threshold-inside {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 27px;
+
+  padding: 25px;
+
+  text-align: center;
+  color: #332d24;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #efe2bc 0%,
+      #d6c29d 55%,
+      #a88f6e 100%
+    );
+
+  box-shadow:
+    inset 0 0 35px rgba(68, 50, 26, .24);
+}
+
+/* The passage is hidden until the door opens */
+
+.threshold-door:not([open]) .threshold-inside {
+  display: none;
+}
+
+.threshold-inside p {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.9;
+}
+
+.threshold-inside a {
+  color: #332d24;
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.threshold-inside a:hover {
+  background: rgba(255, 255, 255, .3);
+}
+
+.threshold-inside small {
+  font-size: .65rem;
+  line-height: 1.6;
+  color: #75674f;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.threshold-doorleaf:focus-visible,
+.threshold-inside a:focus-visible {
+  outline: 2px dashed #332d24;
+  outline-offset: 4px;
+}
+
+/* --------------------------------
+   THE DOORMAT
+-------------------------------- */
+
+.threshold-doormat {
+  width: 82%;
+  margin: 12px auto 0;
+  padding: 12px 8px;
+
+  background: #c7b99b;
+  border: 1px solid #ad9b7d;
+
+  color: #6a5e49;
+  text-align: center;
+
+  font-size: .65rem;
+  line-height: 1.6;
+
+  transform: perspective(250px) rotateX(18deg);
+
+  box-shadow: 2px 4px 0 rgba(52, 43, 27, .08);
+}
+
+/* --------------------------------
+   ODDITIES AROUND THE ENTRANCE
+-------------------------------- */
+
+.threshold-oddities {
+  position: relative;
+  min-height: 210px;
+  margin-top: 100px;
+}
+
+/* SUSPICIOUS MARK */
+
+.threshold-mark {
+  position: absolute;
+  left: 6%;
+  top: 35px;
+
+  color: var(--faded);
+  font-size: .8rem;
+}
+
+.threshold-mark summary {
+  width: fit-content;
+  cursor: pointer;
+  list-style: none;
+
+  font-size: 1.5rem;
+}
+
+.threshold-mark summary::-webkit-details-marker {
+  display: none;
+}
+
+.threshold-mark p {
+  max-width: 190px;
+  margin-top: 8px;
+  font-size: .7rem;
+  line-height: 1.7;
+}
+
+/* A NOTE IN THE CORNER */
+
+.threshold-corner-note {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+
+  margin: 0;
+  color: var(--faded);
+  font-size: .7rem;
+}
+
+/* THE ACTUAL RESIDENT */
+
+.threshold-resident {
+  position: absolute;
+  right: 7%;
+  bottom: 70px;
+
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  display: inline-block;
+  transform: rotate(-15deg);
+
+  transition: transform .2s ease;
+}
+
+.threshold-resident:hover,
+.threshold-resident:focus-visible {
+  transform: rotate(18deg) translateY(-7px);
+}
+
+.threshold-resident:focus-visible,
+.threshold-mark summary:focus-visible {
+  outline: 2px dashed var(--ink);
+  outline-offset: 5px;
+}
+
+/* --------------------------------
+   SMALLER SCREENS
+-------------------------------- */
+
+@media (max-width: 750px) {
+
+  .threshold-page {
+    padding-top: 75px;
+  }
+
+  .threshold-label {
+    margin-bottom: 65px;
+  }
+
+  .threshold-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .threshold-greeting {
+    max-width: 100%;
+  }
+
+  .threshold-landing {
+    width: min(100%, 315px);
+  }
+
+  .threshold-doorframe {
+    height: 355px;
+  }
+
+  .threshold-oddities {
+    margin-top: 70px;
+    min-height: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .threshold-doorleaf,
+  .threshold-resident {
+    transition: none;
+  }
+}

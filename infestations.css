@@ -1,0 +1,478 @@
+
+/* --------------------------------
+   INFESTATIONS
+   the public notice wall
+-------------------------------- */
+
+.infestations-page {
+  max-width: 940px;
+}
+
+/* INTRODUCTION */
+
+.infestations-intro {
+  max-width: 600px;
+  margin-bottom: 95px;
+}
+
+.infestations-intro h1 {
+  margin: 0 0 32px;
+}
+
+.infestations-intro > p {
+  margin: 0 0 20px;
+}
+
+.wall-label,
+.wall-whisper {
+  color: var(--faded, #89867d);
+  font-size: 0.76rem;
+}
+
+.wall-label {
+  margin-bottom: 30px !important;
+}
+
+.infestation-directory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 32px;
+  margin-top: 50px;
+}
+
+.infestation-directory a {
+  color: var(--ink);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* --------------------------------
+   THE WALL ITSELF
+-------------------------------- */
+
+.plaster-wall {
+  position: relative;
+  padding: clamp(30px, 6vw, 70px);
+  overflow: hidden;
+
+  background-color: #ded8ca;
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 25%,
+      rgba(119, 107, 87, 0.15),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(255, 252, 240, 0.65),
+      transparent 55%
+    ),
+    repeating-linear-gradient(
+      7deg,
+      transparent 0 9px,
+      rgba(75, 65, 49, 0.018) 10px 11px
+    );
+
+  box-shadow:
+    inset 0 0 48px rgba(68, 57, 38, 0.10),
+    4px 6px 0 rgba(68, 57, 38, 0.08);
+}
+
+.wall-section {
+  position: relative;
+  scroll-margin-top: 40px;
+}
+
+.wall-section + .wall-section {
+  margin-top: 100px;
+  padding-top: 65px;
+  border-top: 1px dashed rgba(90, 76, 58, 0.25);
+}
+
+.wall-section > h2 {
+  margin: 0 0 55px;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #575044;
+}
+
+/* --------------------------------
+   FLYERS SCATTERED ON THE WALL
+-------------------------------- */
+
+.poster-spread {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+  column-gap: 20px;
+  row-gap: 55px;
+}
+
+/* Each new piece automatically gets a position. */
+
+.wall-piece {
+  --tilt: -3deg;
+
+  position: relative;
+  grid-column: span 4;
+  min-width: 0;
+
+  transform: rotate(var(--tilt));
+  transform-origin: center;
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.wall-piece:nth-child(4n + 1) {
+  grid-column: span 5;
+  --tilt: -5deg;
+  margin-top: 8px;
+}
+
+.wall-piece:nth-child(4n + 2) {
+  grid-column: span 4;
+  --tilt: 6deg;
+  margin-top: 65px;
+}
+
+.wall-piece:nth-child(4n + 3) {
+  grid-column: span 3;
+  --tilt: -8deg;
+  margin-top: 28px;
+}
+
+.wall-piece:nth-child(4n + 4) {
+  grid-column: span 5;
+  --tilt: 4deg;
+  margin-top: -15px;
+}
+
+/* Lift the paper when visitors investigate it. */
+
+.wall-piece:hover,
+.wall-piece:focus-within {
+  transform:
+    rotate(calc(var(--tilt) * 0.4))
+    translateY(-6px);
+
+  z-index: 5;
+}
+
+/* MASKING TAPE */
+
+.wall-piece::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+
+  width: 83px;
+  height: 21px;
+
+  top: -11px;
+  left: 35%;
+
+  background: rgba(207, 193, 157, 0.76);
+  border-left: 1px solid rgba(135, 118, 85, 0.24);
+  border-right: 1px solid rgba(135, 118, 85, 0.24);
+
+  transform: rotate(6deg);
+}
+
+.wall-piece:nth-child(2n)::before {
+  left: 55%;
+  transform: rotate(-9deg);
+}
+
+/* --------------------------------
+   PAPER AND PRINT
+-------------------------------- */
+
+.poster-paper {
+  position: relative;
+  padding: clamp(18px, 2.5vw, 28px);
+  color: #2f2c27;
+
+  background: #f5f1e6;
+
+  border: 1px solid #d0c7b4;
+
+  box-shadow:
+    3px 4px 2px rgba(42, 32, 20, 0.10),
+    8px 12px 16px rgba(42, 32, 20, 0.18);
+}
+
+.poster-paper h3 {
+  margin: 0 0 25px;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: normal;
+}
+
+.poster-paper p {
+  margin: 0 0 20px;
+  font-size: 0.79rem;
+  line-height: 1.65;
+}
+
+.poster-paper p:last-child {
+  margin-bottom: 0;
+}
+
+.flyer-meta {
+  font-size: 0.66rem !important;
+  color: #777064;
+  letter-spacing: 0.02em;
+
+  margin-bottom: 30px !important;
+}
+
+.flyer-footnote {
+  font-size: 0.68rem !important;
+  color: #847e72;
+  margin-top: 35px !important;
+}
+
+/* --------------------------------
+   UPCOMING SHOW NOTICE
+-------------------------------- */
+
+.flyer--notice {
+  background: #eee6c5;
+  border: 1px solid #d1c39a;
+  padding: 32px 26px 45px;
+}
+
+.flyer--notice .flyer-title {
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+
+  margin: 30px 0;
+}
+
+/* --------------------------------
+   OLD INCIDENT REPORT
+-------------------------------- */
+
+.flyer--report {
+  background: #f5f1e8;
+  border-bottom: 4px double #c4bbae;
+}
+
+.incident-details {
+  margin-top: 30px;
+  font-size: 0.75rem;
+}
+
+.incident-details summary {
+  width: fit-content;
+  cursor: pointer;
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.incident-details p {
+  margin-top: 15px;
+  font-size: 0.75rem;
+}
+
+/* --------------------------------
+   PERFORMANCE PHOTOGRAPHS
+-------------------------------- */
+
+.flyer--photo {
+  margin: 0;
+  padding: 12px 12px 25px;
+  background: #fffdf5;
+}
+
+.flyer--photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 17px;
+}
+
+/* Temporary photograph placeholder */
+
+.evidence-placeholder {
+  min-height: 200px;
+  padding: 20px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #e5e0d5 0 8px,
+      #eee9de 8px 16px
+    );
+
+  border: 1px dashed #afa699;
+
+  color: #8b8275;
+  text-align: center;
+  font-size: 0.72rem;
+}
+
+.flyer--photo figcaption {
+  margin-top: 18px;
+  font-size: 0.73rem;
+  color: #777064;
+}
+
+/* --------------------------------
+   STRAY PHOTOCOPIED NOTICE
+-------------------------------- */
+
+.flyer--scrap {
+  padding: 25px 17px 35px;
+
+  background: #e8e6df;
+  border: 2px solid #46423b;
+  color: #292724;
+
+  filter: grayscale(1);
+}
+
+.flyer--scrap h3 {
+  font-size: clamp(1.1rem, 2vw, 1.65rem);
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.flyer--scrap a {
+  color: inherit;
+  font-size: 0.73rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* --------------------------------
+   VIDEO CLIPPINGS
+-------------------------------- */
+
+.flyer--video {
+  background: #efebe0;
+}
+
+.flyer--video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 18px;
+}
+
+/* --------------------------------
+   NOTES AND SECRETS
+-------------------------------- */
+
+.wall-bottom-note {
+  margin: 110px 0 0;
+  font-size: 0.7rem;
+  color: #777064;
+  text-align: right;
+}
+
+.wall-secret {
+  width: fit-content;
+  margin: 75px 0 0 auto;
+
+  font-size: 0.73rem;
+  color: var(--faded, #89867d);
+}
+
+.wall-secret summary {
+  cursor: pointer;
+}
+
+.wall-secret p {
+  color: var(--ink, #262521);
+}
+
+/* --------------------------------
+   SMALLER WINDOWS
+-------------------------------- */
+
+@media (max-width: 650px) {
+
+  .infestations-intro {
+    margin-bottom: 65px;
+  }
+
+  .plaster-wall {
+    padding: 38px 24px;
+  }
+
+  .poster-spread {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .wall-piece,
+  .wall-piece:nth-child(n) {
+    width: 88%;
+    margin: 0;
+  }
+
+  .wall-piece:nth-child(2n) {
+    width: 85%;
+    margin-left: auto;
+  }
+
+  .wall-section + .wall-section {
+    margin-top: 90px;
+    padding-top: 60px;
+  }
+
+  .wall-section > h2 {
+    margin-bottom: 50px;
+  }
+
+  .flyer--notice .flyer-title {
+    font-size: 1.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wall-piece {
+    transition: none;
+  }
+}
+
+
+/* --------------------------------
+   THE ACTUAL WALL
+-------------------------------- */
+
+.plaster-wall {
+  background-color: #d8d2c5;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 250, 235, 0.10),
+      rgba(55, 43, 30, 0.13)
+    ),
+    url("./assets/textures/plaster.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 3px solid #bcb4a5;
+
+  box-shadow:
+    inset 0 0 40px rgba(47, 37, 24, 0.17),
+    5px 7px 0 rgba(47, 37, 24, 0.07);
+}

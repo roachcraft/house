@@ -214,5 +214,55 @@
     </footer>
 
   </div>
+
+
+<script>
+  // the closet would prefer some privacy
+
+  (() => {
+    const closet = document.querySelector(".hallway-closet");
+    const door = closet?.querySelector("summary");
+    const message = closet?.querySelector("p");
+
+    if (!door || !message) return;
+
+    const additionalReplies = [
+      "i said please.",
+      "seriously.",
+      "there's nothing in there for you.",
+      "not up for discussion, sorry.",
+      "still locked.",
+      "...",
+      "are you quite finished?",
+      ".....",
+      "thought i was the resident house pest.",
+      "OK champ, you've had your fun.",
+      "are you still at it?",
+      "DAMN YOU ARE SOMETHING",
+      "fine.",
+      "please tap until your finger falls off.",
+      "i could use a meal."
+    ];
+
+    let clicks = 0;
+
+    door.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      // Reveal the existing message without
+      // making the closet move or toggle closed.
+      closet.open = true;
+
+      if (clicks > 0) {
+        message.textContent = additionalReplies[
+          Math.min(clicks - 1, additionalReplies.length - 1)
+        ];
+      }
+
+      clicks++;
+    });
+  })();
+</script>
+
 </body>
 </html>

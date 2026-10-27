@@ -676,3 +676,16 @@ h1, h2, h3 {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
+
+
+/* A CLOSET WITH BOUNDARIES */
+
+.hallway-closet .closet-door {
+  appearance: none;
+  padding: 0;
+  font: inherit;
+}
+
+.hallway-closet .closet-message[hidden] {
+  display: none;
+}

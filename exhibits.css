@@ -288,3 +288,116 @@
 .exhibit details .exhibit-video-slot {
   margin-top: 12px;
 }
+
+
+/* --------------------------------
+   MISCELLANEOUS WALL DEBRIS
+   -------------------------------- */
+
+.wall-inventory,
+.wall-misfiled {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  break-inside: avoid;
+  max-width: 100%;
+  color: #554f43;
+  line-height: 1.6;
+}
+
+/* A TAPED INVENTORY SLIP */
+
+.wall-inventory {
+  width: 83%;
+  margin: 20px 0 65px 7%;
+  padding: 25px 17px 18px;
+
+  background: #e8deca;
+  border: 1px solid #bfaf95;
+  box-shadow: 3px 6px 10px #544f4130;
+
+  transform: rotate(-4deg);
+}
+
+/* A LITTLE STRIP OF MASKING TAPE */
+
+.wall-inventory::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 32%;
+
+  width: 57px;
+  height: 18px;
+
+  background: rgba(231, 211, 157, 0.82);
+  transform: rotate(6deg);
+}
+
+.wall-inventory-heading {
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bfaf95;
+  font-size: .65rem;
+  letter-spacing: .04em;
+}
+
+.wall-inventory p {
+  margin: 17px 0;
+  font-size: .72rem;
+}
+
+.wall-inventory small {
+  display: block;
+  color: #83786b;
+  font-size: .62rem;
+}
+
+/* A LABEL WITHOUT ITS EXHIBIT */
+
+.wall-misfiled {
+  width: 69%;
+  margin: 10px 0 75px 17%;
+  padding: 22px 13px 15px;
+
+  background: #faf8f2;
+  border: 1px dashed #c8bdaa;
+  box-shadow: 2px 4px 8px #544f4125;
+
+  transform: rotate(7deg);
+}
+
+/* ITS LONE PUSH PIN */
+
+.wall-misfiled::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 49%;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #878e74;
+  border: 1px solid #65705b;
+  box-shadow: 1px 2px 2px #0004;
+}
+
+.wall-misfiled-heading {
+  display: block;
+  margin-top: 8px;
+  font-size: .61rem;
+  color: #83786b;
+}
+
+.wall-misfiled p {
+  margin: 12px 0;
+  font-size: .73rem;
+}
+
+.wall-misfiled small {
+  font-size: .62rem;
+  color: #83786b;
+}

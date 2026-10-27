@@ -272,3 +272,45 @@
     inset 0 0 35px rgba(48, 29, 14, 0.20),
     5px 7px 0 rgba(48, 29, 14, 0.08);
 }
+
+
+/* --------------------------------
+   PHOTOGRAPHS TUCKED INTO NOTES
+-------------------------------- */
+
+.desk-insert {
+  box-sizing: border-box;
+
+  width: min(100%, 290px);
+  margin: 5px auto 28px;
+  padding: 8px 8px 14px;
+
+  background: #fffefa;
+  border: 1px solid #ded7c9;
+
+  box-shadow:
+    2px 3px 2px rgba(40, 30, 20, 0.10),
+    5px 8px 10px rgba(40, 30, 20, 0.15);
+
+  transform: rotate(-3deg);
+}
+
+.desk-insert img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.desk-insert figcaption {
+  margin-top: 12px;
+  color: #8b8376;
+  font-size: 0.67rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* One photograph is slightly askew */
+
+.desk-insert--molt {
+  transform: rotate(3deg);
+}

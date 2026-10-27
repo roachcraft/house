@@ -639,3 +639,64 @@
   margin: 0;
   padding: 0;
 }
+
+
+
+/* --------------------------------
+   MORE THINGS IN THE DRAWER
+   nobody remembers putting these here
+   -------------------------------- */
+
+/* AN OLD BATTERY */
+
+.clutter--battery {
+  --size: 75px;
+  --angle: -24deg;
+
+  top: 27%;
+  left: 51%;
+}
+
+/* AN ABANDONED SCRUNCHIE */
+
+.clutter--scrunchie {
+  --size: 115px;
+  --angle: 18deg;
+
+  top: 57%;
+  right: 13%;
+}
+
+/* A RECEIPT FROM WHO KNOWS WHEN */
+
+.clutter--receipt {
+  --size: 125px;
+  --angle: -12deg;
+
+  bottom: 3%;
+  left: 40%;
+}
+
+/* SMALLER SCREENS */
+
+@media (max-width: 700px) {
+
+  .clutter--battery {
+    --size: 58px;
+    top: 27%;
+    left: 53%;
+  }
+
+  .clutter--scrunchie {
+    --size: 85px;
+    top: 59%;
+    right: -5%;
+  }
+
+  .clutter--receipt {
+    --size: 95px;
+    bottom: 4%;
+    left: 7%;
+  }
+
+}

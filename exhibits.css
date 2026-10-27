@@ -1,20 +1,20 @@
 
-/* SIGHTINGS — THE PINBOARD */
+/* EXHIBITS — THE WALL */
 
-.sightings-page {
+.exhibits-page {
   max-width: 940px;
 }
 
-.sightings-intro {
+.exhibits-intro {
   max-width: 540px;
   margin-bottom: 105px;
 }
 
-.sightings-intro h1 {
+.exhibits-intro h1 {
   margin: 0 0 32px;
 }
 
-.sightings-intro > p {
+.exhibits-intro > p {
   margin: 0 0 18px;
 }
 
@@ -30,7 +30,7 @@
 
 /* THE WALL */
 
-.sightings-wall {
+.exhibits-wall {
   columns: 3 220px;
   column-gap: 34px;
   padding: 60px 35px 75px;
@@ -43,7 +43,7 @@
 
 /* PINNED PHOTOGRAPHS */
 
-.sighting {
+.exhibits {
   --tilt: -3deg;
   display: inline-block;
   vertical-align: top;
@@ -60,20 +60,20 @@
 
 /* Automatically vary new photographs */
 
-.sighting:nth-of-type(3n + 2) {
+.exhibit:nth-of-type(3n + 2) {
   --tilt: 5deg;
   width: 89%;
   margin-left: 8%;
 }
 
-.sighting:nth-of-type(3n + 3) {
+.exhibit:nth-of-type(3n + 3) {
   --tilt: -6deg;
   width: 97%;
   margin-left: 0;
 }
 
-.sighting:hover,
-.sighting:focus-within {
+.exhibit:hover,
+.exhibit:focus-within {
   transform: rotate(0deg) translateY(-5px);
   box-shadow: 4px 12px 20px #544f4140;
   z-index: 2;
@@ -81,7 +81,7 @@
 
 /* LITTLE PUSHPINS */
 
-.sighting::before {
+.exhibit::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -95,30 +95,30 @@
   box-shadow: 1px 2px 2px #0004;
 }
 
-.sighting:nth-of-type(2n)::before {
+.exhibit:nth-of-type(2n)::before {
   background: #878e74;
   border-color: #65705b;
 }
 
 /* PHOTO AND CAPTION */
 
-.sighting figure {
+.exhibit figure {
   margin: 0;
 }
 
-.sighting img {
+.exhibit img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.sighting figcaption {
+.exhibit figcaption {
   padding: 14px 3px 1px;
   font-size: .78rem;
   line-height: 1.5;
 }
 
-.sighting figcaption span {
+.exhibit figcaption span {
   display: block;
   padding-top: 3px;
   color: #8b877e;
@@ -127,20 +127,20 @@
 
 /* NOTES ON THE BACK */
 
-.sighting details {
+.exhibit details {
   margin: 13px 3px 0;
   border-top: 1px dashed #dedad2;
   padding-top: 9px;
   font-size: .7rem;
 }
 
-.sighting summary {
+.exhibit summary {
   width: fit-content;
   cursor: pointer;
   color: #777169;
 }
 
-.sighting details p {
+.exhibit details p {
   margin: 10px 0 2px;
 }
 
@@ -180,26 +180,26 @@
 /* SMALLER WINDOWS */
 
 @media (max-width: 650px) {
-  .sightings-intro {
+  .exhibits-intro {
     margin-bottom: 65px;
   }
 
-  .sightings-wall {
+  .exhibits-wall {
     columns: 1;
     padding: 38px 22px;
   }
 
-  .sighting {
+  .exhibit {
     width: 84%;
     margin: 0 0 58px 2%;
   }
 
-  .sighting:nth-of-type(3n + 2) {
+  .exhibit:nth-of-type(3n + 2) {
     width: 82%;
     margin-left: 16%;
   }
 
-  .sighting:nth-of-type(3n + 3) {
+  .exhibit:nth-of-type(3n + 3) {
     width: 90%;
     margin-left: 1%;
   }
@@ -211,7 +211,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sighting {
+  .exhibit {
     transition: none;
   }
 }
@@ -219,7 +219,7 @@
 
 /* THE ACTUAL WALL */
 
-.sightings-wall {
+.exhibits-wall {
   background-color: #a98967;
 
   background-image:

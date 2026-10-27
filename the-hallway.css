@@ -490,6 +490,7 @@
   width: fit-content;
   cursor: pointer;
   list-style: none;
+  color: #fff
 }
 
 .hallway-scratch summary::-webkit-details-marker {
@@ -508,6 +509,7 @@
   background: #eee6d5;
   font-size: 0.67rem;
   line-height: 1.6;
+
 }
 
 /* THE WAY BACK */

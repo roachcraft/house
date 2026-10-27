@@ -1,0 +1,178 @@
+
+/* --------------------------------
+   EXHIBITS / PHOTOGRAPH COLLECTION
+   some things come in stacks
+-------------------------------- */
+
+.exhibit-carousel {
+  box-sizing: border-box;
+  position: relative;
+
+  /* Span the wall's columns if using
+     the original multi-column layout. */
+  column-span: all;
+  break-inside: avoid;
+
+  width: min(100%, 640px);
+  margin: 45px auto 75px;
+  padding: clamp(15px, 3vw, 26px);
+
+  background: #f7f3e9;
+  border: 1px solid #d5cbb9;
+
+  box-shadow:
+    3px 4px 2px rgba(40, 31, 20, 0.10),
+    9px 13px 18px rgba(40, 31, 20, 0.18);
+
+  transform: rotate(-0.5deg);
+}
+
+/* A little piece of tape holding
+   the collection to the wall */
+
+.exhibit-carousel::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+
+  top: -12px;
+  left: 44%;
+
+  width: 85px;
+  height: 23px;
+
+  background: rgba(211, 193, 151, 0.78);
+  transform: rotate(4deg);
+}
+
+/* CATALOG LABEL */
+
+.exhibit-carousel-meta {
+  color: #81786c;
+  font-size: 0.67rem;
+  line-height: 1.7;
+  margin: 0 0 19px;
+}
+
+.exhibit-carousel-heading h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 12px;
+}
+
+.exhibit-carousel-heading > p:last-child {
+  margin: 0 0 27px;
+  font-size: 0.78rem;
+  color: #655e54;
+}
+
+/* --------------------------------
+   THE SLIDING PHOTO STACK
+-------------------------------- */
+
+
+.exhibit-track {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.exhibit-slide {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  height: clamp(260px, 55vw, 470px);
+
+  object-fit: cover;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  scroll-snap-align: start;
+}
+
+
+/* --------------------------------
+   CONTROLS
+-------------------------------- */
+
+.exhibit-carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+  margin-top: 21px;
+}
+
+.exhibit-carousel-button {
+  appearance: none;
+
+  background: none;
+  border: none;
+  padding: 8px 3px;
+
+  font: inherit;
+  font-size: 0.74rem;
+  color: #514a40;
+
+  cursor: pointer;
+}
+
+.exhibit-carousel-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.exhibit-carousel-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+  text-decoration: none;
+}
+
+.exhibit-carousel-button:focus-visible,
+.exhibit-track:focus-visible {
+  outline: 2px dashed #514a40;
+  outline-offset: 4px;
+}
+
+.exhibit-carousel-counter {
+  white-space: nowrap;
+  color: #857d70;
+  font-size: 0.72rem;
+}
+
+.exhibit-carousel-footnote {
+  margin: 28px 0 0;
+  font-size: 0.69rem;
+  color: #90877a;
+  text-align: right;
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 650px) {
+  .exhibit-carousel {
+    width: 100%;
+    margin: 35px auto 55px;
+    transform: none;
+  }
+
+  .exhibit-carousel-button {
+    font-size: 0.68rem;
+  }
+
+  .exhibit-slide {
+    height: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exhibit-track {
+    scroll-behavior: auto;
+  }
+}

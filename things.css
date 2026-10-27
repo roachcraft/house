@@ -1,8 +1,4 @@
-/* things: a loosely arranged drawer of objects.
-   This file builds on the shared style.css from the rest of roachcraft. */
-
-.things-page {
-  max-width: 
+ 
 /* things: a loosely arranged drawer of objects.
    This file builds on the shared style.css from the rest of roachcraft. */
 
@@ -313,9 +309,6 @@
     transition: none;
   }
 }
-860px;
-  padding-bottom: 150px;
-}
 
 .drawer-intro {
   max-width: 570px;
@@ -509,4 +502,140 @@
     top: 74%;
     left: -14px;
   }
+}
+
+
+/* --------------------------------
+   A LOOSE PHOTOGRAPH
+   found beneath the other things
+-------------------------------- */
+
+.drawer-group-photo {
+  box-sizing: border-box;
+  width: min(68%, 290px);
+
+  margin: 65px 8% 0 auto;
+  padding: 11px 11px 18px;
+
+  background: #f8f4e9;
+  border: 1px solid #d5d0c3;
+
+  box-shadow: 5px 7px 0 rgba(69, 63, 43, 0.09);
+
+  transform: rotate(5deg);
+}
+
+.drawer-group-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.drawer-group-photo figcaption {
+  margin-top: 13px;
+  color: #89867d;
+  font-size: 0.69rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .drawer-group-photo {
+    width: 75%;
+    margin: 45px 5% 0 auto;
+    transform: rotate(3deg);
+  }
+}
+
+
+/* A PHOTOGRAPH THAT OPENS */
+
+.drawer-group-photo a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.drawer-group-photo a:focus-visible {
+  outline: 2px dashed currentColor;
+  outline-offset: 5px;
+}
+
+.drawer-group-photo a:hover img {
+  filter: brightness(1.05);
+}
+
+
+/* CLICKABLE GROUP PHOTOGRAPHS */
+
+.drawer-group-photo {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.drawer-group-photo:has(a):hover,
+.drawer-group-photo:focus-within {
+  transform: rotate(2deg) translateY(-5px);
+  box-shadow:
+    8px 11px 0 rgba(69, 63, 43, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-group-photo {
+    transition: none;
+  }
+}
+
+
+/* CONSISTENT LABELS FOR GROUP PHOTOGRAPHS */
+
+.drawer-group-photo a {
+  text-decoration: none;
+}
+
+.drawer-group-photo .object-title {
+  color: var(--ink, #262521);
+  font-size: 0.9rem;
+}
+
+.drawer-group-photo .object-detail {
+  color: var(--faded, #89867d);
+  font-size: 0.72rem;
+}
+
+.drawer-group-hint {
+  box-sizing: border-box;
+  width: min(68%, 290px);
+
+  margin: 10px 8% 0 auto;
+  padding-left: 4px;
+
+  color: var(--faded, #89867d);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 700px) {
+  .drawer-group-hint {
+    width: 75%;
+    margin: 10px 5% 0 auto;
+  }
+}
+
+
+/* KEEP THE ENTRY LABEL ATTACHED TO THE PHOTO */
+
+.drawer-group-photo {
+  position: relative;
+}
+
+.drawer-group-photo .drawer-group-hint {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 4px;
+
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }

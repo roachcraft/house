@@ -650,7 +650,7 @@
 /* AN OLD BATTERY */
 
 .clutter--battery {
-  --size: 75px;
+  --size: 100px;
   --angle: -24deg;
 
   top: 27%;
@@ -670,7 +670,7 @@
 /* A RECEIPT FROM WHO KNOWS WHEN */
 
 .clutter--receipt {
-  --size: 125px;
+  --size: 200px;
   --angle: -12deg;
 
   bottom: 3%;
@@ -682,7 +682,7 @@
 @media (max-width: 700px) {
 
   .clutter--battery {
-    --size: 58px;
+    --size: 70px;
     top: 27%;
     left: 53%;
   }
@@ -694,7 +694,7 @@
   }
 
   .clutter--receipt {
-    --size: 95px;
+    --size: 150px;
     bottom: 4%;
     left: 7%;
   }

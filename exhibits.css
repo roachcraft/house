@@ -43,7 +43,7 @@
 
 /* PINNED PHOTOGRAPHS */
 
-.exhibits {
+.exhibit {
   --tilt: -3deg;
   display: inline-block;
   vertical-align: top;

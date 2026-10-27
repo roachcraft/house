@@ -217,7 +217,7 @@
 }
 
 
-/* THE ACTUAL CORKBOARD */
+/* THE ACTUAL WALL */
 
 .sightings-wall {
   background-color: #a98967;
@@ -227,7 +227,7 @@
       rgba(250, 241, 220, 0.10),
       rgba(83, 59, 35, 0.10)
     ),
-    url("./assets/textures/cork.jpg");
+    url("./assets/textures/cork.webp");
 
   background-size: cover;
   background-position: center;

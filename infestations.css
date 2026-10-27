@@ -464,7 +464,7 @@
       rgba(255, 250, 235, 0.10),
       rgba(55, 43, 30, 0.13)
     ),
-    url("./assets/textures/plaster.jpg");
+    url("./assets/textures/plaster.webp");
 
   background-size: cover;
   background-position: center;

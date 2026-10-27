@@ -714,7 +714,7 @@
       rgba(230, 221, 202, 0.20),
       rgba(79, 65, 43, 0.13)
     ),
-    url("./assets/textures/hallway-wall.jpg");
+    url("./assets/textures/hallway-wall.webp");
 
   background-size: cover;
   background-position: center;

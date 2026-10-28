@@ -476,3 +476,45 @@
     transition: none;
   }
 }
+
+
+/* --------------------------------
+   A NOTE REGARDING ACCOMMODATIONS
+   -------------------------------- */
+
+.threshold-visit-note {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 330px;
+  margin: 45px 0 0;
+  padding: 18px 20px;
+
+  background: #f4f0e5;
+  border: 1px solid #d5ccbb;
+  box-shadow: 2px 3px 0 rgba(65, 52, 34, .08);
+
+  color: #5c513e;
+  transform: rotate(-1deg);
+}
+
+.threshold-greeting .threshold-visit-note p {
+  margin: 0 0 12px;
+  font-size: .73rem;
+  line-height: 1.75;
+}
+
+.threshold-greeting .threshold-visit-note p:last-child {
+  margin-bottom: 0;
+}
+
+.threshold-visit-note .visit-note-heading {
+  color: #857763;
+  font-size: .65rem !important;
+  margin-bottom: 19px !important;
+}
+
+.threshold-visit-note .visit-note-whisper {
+  color: #857763;
+  font-size: .68rem !important;
+}
+

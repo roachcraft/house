@@ -689,3 +689,20 @@ h1, h2, h3 {
 .hallway-closet .closet-message[hidden] {
   display: none;
 }
+
+
+/* --------------------------------
+   THE RESIDENT IS EVERYWHERE
+   -------------------------------- */
+
+/* Default cursor throughout the house */
+
+body {
+  cursor: url("./assets/cursors/cockroach.cur"), auto;
+}
+
+/* Keep the roach visible on clickable things */
+
+body :is(a, button, summary, [role="button"]) {
+  cursor: url("./assets/cursors/cockroach.cur"), pointer !important;
+}

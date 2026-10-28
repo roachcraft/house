@@ -314,3 +314,70 @@
 .desk-insert--molt {
   transform: rotate(3deg);
 }
+
+
+/* --------------------------------
+   PHOTOGRAPHS WITHIN WRITTEN NOTES
+   evidence, not another paper frame
+   -------------------------------- */
+
+.paper--letter .desk-insert,
+.paper--notebook .desk-insert {
+  width: min(100%, 250px);
+  margin: 24px 0 22px;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.paper--letter .desk-insert img,
+.paper--notebook .desk-insert img {
+  box-sizing: border-box;
+  border: 1px solid #d6d1c6;
+}
+
+.paper--letter .desk-insert figcaption,
+.paper--notebook .desk-insert figcaption {
+  margin-top: 9px;
+  text-align: left;
+}
+
+
+/* POEMS AND OTHER DELIBERATE LINE BREAKS */
+
+.desk-paper .note-verse {
+  white-space: pre-line;
+  line-height: 1.9;
+}
+
+
+/* --------------------------------
+   PHOTOGRAPHIC EVIDENCE
+   tucked behind written notes
+   -------------------------------- */
+
+.note-photo-reveal .desk-insert {
+  width: min(100%, 290px);
+  margin: 20px 0 5px;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.note-photo-reveal .desk-insert img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d6d1c6;
+}
+
+.note-photo-reveal .desk-insert figcaption {
+  margin-top: 9px;
+  text-align: left;
+}

@@ -660,7 +660,7 @@
 /* AN ABANDONED SCRUNCHIE */
 
 .clutter--scrunchie {
-  --size: 115px;
+  --size: 200px;
   --angle: 18deg;
 
   top: 57%;
@@ -688,7 +688,7 @@
   }
 
   .clutter--scrunchie {
-    --size: 85px;
+    --size: 120px;
     top: 59%;
     right: -5%;
   }
@@ -699,4 +699,104 @@
     left: 7%;
   }
 
+}
+
+
+/* --------------------------------
+   MORE THINGS HAVE TURNED UP
+   the drawer continues
+   -------------------------------- */
+
+.drawer-additions {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 10px;
+  row-gap: 65px;
+
+  position: relative;
+  max-width: 850px;
+  margin-top: 130px;
+  padding: 15px 22px 50px;
+
+  isolation: isolate;
+}
+
+/* Don't inherit old nth-child offsets */
+
+.drawer-additions .object-card {
+  margin: 0;
+}
+
+/* FIRST PILE */
+
+.drawer-additions .object-card--banana-love {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  --tilt: -5deg;
+}
+
+.drawer-additions .object-card--punk-feminist {
+  grid-column: 8 / span 5;
+  grid-row: 1;
+  margin-top: 90px;
+  --tilt: 6deg;
+}
+
+/* SECOND PILE */
+
+.drawer-additions .object-card--just-allergies {
+  grid-column: 2 / span 4;
+  grid-row: 2;
+  --tilt: 7deg;
+}
+
+.drawer-additions .object-card--in-the-world {
+  grid-column: 7 / span 6;
+  grid-row: 2;
+  margin-top: 45px;
+  --tilt: -5deg;
+}
+
+/* THIRD PILE */
+
+.drawer-additions .object-card--fall-and-cookie {
+  grid-column: 1 / span 5;
+  grid-row: 3;
+  margin-top: 35px;
+  --tilt: -6deg;
+}
+
+.drawer-additions .object-card--asshat {
+  grid-column: 7 / span 6;
+  grid-row: 3;
+  --tilt: 4deg;
+}
+
+/* SMALLER DRAWERS */
+
+@media (max-width: 700px) {
+  .drawer-additions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 55px;
+
+    margin-top: 95px;
+    padding: 15px 18px 30px;
+  }
+
+  .drawer-additions .object-card {
+    width: 86%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .drawer-additions .object-card:nth-child(even) {
+    width: 80%;
+    margin-left: auto;
+  }
+
+  .drawer-additions .object-card:nth-child(odd) {
+    margin-left: 0;
+  }
 }

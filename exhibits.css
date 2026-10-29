@@ -401,3 +401,156 @@
   font-size: .62rem;
   color: #83786b;
 }
+
+
+/* --------------------------------
+   EXHIBIT 008 / A COLLECTION OF PRINTS
+   -------------------------------- */
+
+.exhibit-collection {
+  column-span: all;
+  break-inside: avoid;
+  box-sizing: border-box;
+
+  width: min(100%, 720px);
+  margin: 65px auto 85px;
+  padding: 30px 27px 38px;
+
+  position: relative;
+
+  background: #eae1d0;
+  border: 1px solid #c5b9a3;
+  box-shadow: 7px 10px 15px rgba(40, 30, 20, 0.2);
+
+  transform: rotate(-0.5deg);
+}
+
+/* Holding the whole collection up */
+
+.exhibit-collection::before {
+  content: "";
+  position: absolute;
+
+  width: 90px;
+  height: 22px;
+  top: -12px;
+  left: calc(50% - 45px);
+
+  background: rgba(220, 201, 162, 0.8);
+  transform: rotate(3deg);
+}
+
+.exhibit-collection-heading {
+  margin-bottom: 35px;
+}
+
+.exhibit-collection-heading p {
+  margin: 0 0 14px;
+  color: #746c5f;
+  font-size: 0.7rem;
+}
+
+.exhibit-collection-heading h2 {
+  margin: 0 0 15px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Individual photographs */
+
+.exhibit-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 22px;
+  align-items: start;
+}
+
+.collection-print {
+  min-width: 0;
+  margin: 0;
+  padding: 10px 10px 15px;
+
+  background: #fffefa;
+  border: 1px solid #d5d0c3;
+  box-shadow: 3px 5px 8px rgba(40, 30, 20, 0.13);
+
+  transform: rotate(-3deg);
+  transition: transform 180ms ease;
+}
+
+.collection-print:nth-child(2) {
+  transform: rotate(4deg);
+  margin-top: 27px;
+}
+
+.collection-print:nth-child(3) {
+  transform: rotate(3deg);
+}
+
+.collection-print:nth-child(4) {
+  transform: rotate(-4deg);
+  margin-top: 20px;
+}
+
+.collection-print:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.collection-print img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.collection-print figcaption {
+  margin-top: 12px;
+  color: #81786c;
+  font-size: 0.7rem;
+}
+
+/* Writing on the back */
+
+.exhibit-collection-note {
+  margin-top: 38px;
+  font-size: 0.73rem;
+  color: #746c5f;
+}
+
+.exhibit-collection-note summary {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.exhibit-collection-note p {
+  margin-top: 15px;
+}
+
+/* Small screens */
+
+@media (max-width: 650px) {
+  .exhibit-collection {
+    width: 100%;
+    padding: 25px 15px 30px;
+    transform: none;
+  }
+
+  .exhibit-collection-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .collection-print {
+    width: 88%;
+    box-sizing: border-box;
+  }
+
+  .collection-print:nth-child(even) {
+    margin-left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-print {
+    transition: none;
+  }
+}

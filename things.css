@@ -800,3 +800,30 @@
     margin-left: 0;
   }
 }
+
+
+/* --------------------------------
+   TWO MORE THINGS FOUND
+   -------------------------------- */
+
+.drawer-additions .object-card--fruit-collage {
+  grid-column: 2 / span 5;
+  grid-row: 4;
+  --tilt: 5deg;
+}
+
+.drawer-additions .object-card--light-your-power {
+  grid-column: 8 / span 5;
+  grid-row: 4;
+  margin-top: 70px;
+  --tilt: -6deg;
+}
+
+
+/* ONE LAST THING, FOR NOW */
+
+.drawer-additions .object-card--purple-glass {
+  grid-column: 4 / span 6;
+  grid-row: 5;
+  --tilt: -4deg;
+}

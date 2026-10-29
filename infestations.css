@@ -379,7 +379,7 @@
 .wall-bottom-note {
   margin: 110px 0 0;
   font-size: 0.7rem;
-  color: #777064;
+  color: #ffffff;
   text-align: right;
 }
 
@@ -388,7 +388,7 @@
   margin: 75px 0 0 auto;
 
   font-size: 0.73rem;
-  color: var(--faded, #89867d);
+  color: var(--faded, #ffffff);
 }
 
 .wall-secret summary {

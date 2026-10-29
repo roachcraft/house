@@ -275,5 +275,96 @@
   })();
 </script>
 
+
+<!-- THE CLOSET HAS FINALLY RESPONDED -->
+
+<div
+  id="closet-scare"
+  class="closet-scare"
+  role="dialog"
+  aria-modal="true"
+  aria-label="something was in the closet"
+  tabindex="-1"
+  hidden
+>
+  <img
+    src="./assets/images/closet-jumpscare.webp"
+    alt="Something has appeared from inside the closet."
+  >
+
+  <button
+    type="button"
+    class="closet-scare-close"
+    aria-label="dismiss the image"
+  >
+    ×
+  </button>
+</div>
+
+<script>
+(() => {
+  const closet = document.querySelector(".hallway-closet");
+  const door = closet?.querySelector("summary");
+  const message = closet?.querySelector("p");
+
+  const scare = document.querySelector("#closet-scare");
+  const closeButton = scare?.querySelector("button");
+
+  if (!door || !message || !scare || !closeButton) return;
+
+  const LAST_REPLY = "i could use a meal.";
+  const EXTRA_CLICKS = 9;
+
+  let finalReplyClicks = 0;
+  let scareTriggered = false;
+
+  door.addEventListener("click", () => {
+    if (scareTriggered) return;
+
+    // Let the existing closet script update its message first.
+    setTimeout(() => {
+      if (scareTriggered) return;
+
+      if (message.textContent.trim() !== LAST_REPLY) {
+        return;
+      }
+
+      finalReplyClicks++;
+
+      // First encounter with the last line doesn't count
+      // as one of the extra clicks.
+      if (finalReplyClicks > EXTRA_CLICKS + 1) {
+        scareTriggered = true;
+        scare.hidden = false;
+        scare.focus();
+      }
+    }, 0);
+  });
+
+  function dismissScare() {
+    scare.hidden = true;
+    door.focus();
+  }
+
+  closeButton.addEventListener("click", dismissScare);
+
+  scare.addEventListener("click", (event) => {
+    if (
+      event.target === scare ||
+      event.target.tagName === "IMG"
+    ) {
+      dismissScare();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!scare.hidden && event.key === "Escape") {
+      dismissScare();
+    }
+  });
+})();
+</script>
+
+
 </body>
 </html>

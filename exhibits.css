@@ -554,3 +554,23 @@
     transition: none;
   }
 }
+
+
+/* EXTRA PHOTOGRAPHIC EVIDENCE */
+
+.exhibit-extra-photo {
+  margin: 18px 0 5px;
+}
+
+.exhibit-extra-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.exhibit .exhibit-extra-photo figcaption {
+  padding: 9px 0 0;
+  color: #8b877e;
+  font-size: 0.65rem;
+  line-height: 1.5;
+}

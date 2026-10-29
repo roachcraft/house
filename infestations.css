@@ -376,19 +376,12 @@
    NOTES AND SECRETS
 -------------------------------- */
 
-.wall-bottom-note {
-  margin: 110px 0 0;
-  font-size: 0.7rem;
-  color: #ffffff;
-  text-align: right;
-}
-
 .wall-secret {
   width: fit-content;
   margin: 75px 0 0 auto;
 
   font-size: 0.73rem;
-  color: var(--faded, #ffffff);
+  color: var(--faded, #89867d);
 }
 
 .wall-secret summary {
@@ -466,9 +459,11 @@
     ),
     url("./assets/textures/plaster.webp");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
+background-size: 100% 100%, 500px auto;
+background-position: center, top left;
+background-repeat: no-repeat, repeat;
+
 
   border: 3px solid #bcb4a5;
 

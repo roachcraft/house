@@ -217,6 +217,7 @@
 }
 
 
+
 /* THE ACTUAL WALL */
 
 .exhibits-wall {
@@ -229,9 +230,9 @@
     ),
     url("./assets/textures/cork.webp");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: 100% 100%, 450px auto;
+  background-position: center, top left;
+  background-repeat: no-repeat, repeat;
 
   border: 5px solid #b49a78;
 

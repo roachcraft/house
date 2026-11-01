@@ -321,3 +321,73 @@
   }
 
 }
+
+
+/* --------------------------------
+   FOUR MORE LEAVES HAVE TURNED UP
+   -------------------------------- */
+
+/* Leaf 02 / slightly aged paper */
+
+.philosophy-sheet--extra-a {
+  --shift: 20px;
+  --tilt: 1.7deg;
+
+  background: #f3eddf !important;
+}
+
+/* Leaf 04 / another piece of stationery */
+
+.philosophy-sheet--extra-b {
+  --shift: -22px;
+  --tilt: -1.6deg;
+
+  background: #fff9ec !important;
+}
+
+/* Leaf 06 / pale, somewhat worn paper */
+
+.philosophy-sheet--extra-c {
+  --shift: 17px;
+  --tilt: 2deg;
+
+  background: #f2eee5 !important;
+}
+
+/* Leaf 08 / final loose sheet */
+
+.philosophy-sheet--extra-d {
+  --shift: -12px;
+  --tilt: -1.2deg;
+
+  background: #fffaf0 !important;
+}
+
+/* Let the sheets overlap naturally.
+   The inspected sheet still rises above the rest. */
+
+.philosophy-paper-stack .philosophy-sheet {
+  z-index: 1;
+  min-height: 780px;
+}
+
+/* Give each sheet a little less vertical text spacing */
+
+.philosophy-paper-stack .philosophy-sheet > p:not(.sheet-index),
+.philosophy-paper-stack .philosophy-closing p {
+  margin-bottom: 21px;
+  line-height: 1.8;
+}
+
+.philosophy-paper-stack .philosophy-sheet:hover,
+.philosophy-paper-stack .philosophy-sheet:focus-within {
+  z-index: 10;
+}
+
+/* Don't enforce paper height on narrow screens */
+
+@media (max-width: 650px) {
+  .philosophy-paper-stack .philosophy-sheet {
+    min-height: 0;
+  }
+}

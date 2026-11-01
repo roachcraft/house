@@ -879,3 +879,179 @@
     transition: none;
   }
 }
+
+
+/* --------------------------------
+   A SUSPICIOUS SCRAP
+   -------------------------------- */
+
+.drawer-passage-scrap {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+
+  width: 175px;
+  min-height: 140px;
+
+  /* In the gap below the first pile */
+  margin: -20px 12% -25px auto;
+  padding: 18px 15px 23px;
+
+  color: #625a46;
+  background: #ece5b9;
+  border: 1px solid #d5cca0;
+
+  box-shadow: 3px 5px 6px #4a3b2524;
+
+  transform: rotate(8deg);
+  transition: transform 180ms ease;
+
+  text-decoration: none;
+  z-index: 2;
+}
+
+/* One folded corner */
+
+.drawer-passage-scrap::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+
+  width: 24px;
+  height: 24px;
+
+  background: linear-gradient(
+    135deg,
+    #faf6da 0 50%,
+    #cfc38f 51% 100%
+  );
+
+  box-shadow: -2px 2px 3px #51442a20;
+}
+
+.passage-scrap-label,
+.passage-scrap-message,
+.passage-scrap-hint {
+  display: block;
+}
+
+.passage-scrap-label {
+  margin-bottom: 22px;
+  color: #93876a;
+  font-size: .63rem;
+}
+
+.passage-scrap-message {
+  font-size: .77rem;
+  line-height: 1.6;
+}
+
+.passage-scrap-hint {
+  margin-top: 21px;
+  font-size: .64rem;
+  color: #8a7e61;
+  text-align: right;
+}
+
+.drawer-passage-scrap:hover,
+.drawer-passage-scrap:focus-visible {
+  transform: rotate(3deg) translateY(-7px);
+}
+
+.drawer-passage-scrap:focus-visible {
+  outline: 2px dashed #756449;
+  outline-offset: 5px;
+}
+
+@media (max-width: 700px) {
+  .drawer-passage-scrap {
+    width: 150px;
+    min-height: 125px;
+    margin: 15px 7% -10px auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-passage-scrap {
+    transition: none;
+  }
+}
+
+
+/* --------------------------------
+   BEHIND THE DRAWER
+   -------------------------------- */
+
+.crawlspace-page {
+  max-width: 680px;
+  min-height: 70vh;
+  padding-top: 100px;
+}
+
+.crawlspace-page h1 {
+  margin: 0 0 100px;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.crawlspace-message {
+  max-width: 410px;
+  margin: 0 auto 110px;
+  padding: 40px 35px;
+
+  background: #eeeae0;
+  border-left: 4px solid #c7bca5;
+
+  box-shadow: 5px 7px 0 #51483910;
+
+  transform: rotate(-1deg);
+}
+
+.crawlspace-message p {
+  margin: 0 0 27px;
+  font-size: .91rem;
+  line-height: 1.9;
+}
+
+.crawlspace-message p:last-child {
+  margin-bottom: 0;
+}
+
+.crawlspace-exits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+.crawlspace-exits a {
+  color: var(--ink, #262521);
+  font-size: .83rem;
+  text-underline-offset: 5px;
+}
+
+.crawlspace-whisper {
+  margin-top: 130px;
+  text-align: center;
+  color: var(--faded, #89867d);
+  font-size: .7rem;
+}
+
+@media (max-width: 700px) {
+  .crawlspace-page {
+    padding-top: 50px;
+  }
+
+  .crawlspace-page h1 {
+    margin-bottom: 65px;
+  }
+
+  .crawlspace-message {
+    padding: 30px 24px;
+  }
+}
+

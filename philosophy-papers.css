@@ -1,0 +1,323 @@
+
+/* --------------------------------
+   PHILOSOPHY / A PILE OF PAPERS
+   -------------------------------- */
+
+/* A little more room for the mess */
+
+.philosophy-page {
+  max-width: 900px;
+}
+
+/* The pile itself */
+
+.philosophy-paper-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 780px;
+  margin: 55px auto 0;
+  padding: 15px 0 65px;
+}
+
+
+/* --------------------------------
+   ALL FOUR SHEETS
+   -------------------------------- */
+
+.philosophy-paper-stack .philosophy-sheet {
+  position: relative;
+  box-sizing: border-box;
+
+  width: min(650px, calc(100% - 50px));
+  padding:
+    clamp(35px, 5vw, 60px)
+    clamp(25px, 5vw, 58px)
+    65px;
+
+  color: #343129;
+  background: #fffdf5;
+  border: 1px solid #d9d0bc;
+
+  box-shadow:
+    3px 5px 0 rgba(77, 63, 43, .07),
+    8px 13px 18px rgba(54, 43, 29, .14);
+
+  /* Each following sheet overlaps slightly */
+  margin-top: -25px;
+
+  transform:
+    translateX(var(--shift, 0px))
+    rotate(var(--tilt, 0deg));
+
+  transform-origin: center center;
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Make the first sheet begin normally */
+
+.philosophy-paper-stack .philosophy-sheet:first-child {
+  margin-top: 0;
+}
+
+/* Gently straighten whichever paper is inspected */
+
+.philosophy-paper-stack .philosophy-sheet:hover,
+.philosophy-paper-stack .philosophy-sheet:focus-within {
+  z-index: 6;
+
+  transform:
+    translateX(0)
+    rotate(0deg);
+
+  box-shadow:
+    5px 8px 0 rgba(77, 63, 43, .07),
+    12px 17px 23px rgba(54, 43, 29, .18);
+}
+
+
+/* --------------------------------
+   CONTENT INSIDE THE PAPERS
+   -------------------------------- */
+
+.philosophy-paper-stack .sheet-index {
+  margin: 0 0 42px;
+
+  color: #938675;
+  font-size: .68rem;
+  line-height: 1.5;
+  letter-spacing: .035em;
+}
+
+.philosophy-paper-stack .philosophy-sheet > p:not(.sheet-index),
+.philosophy-paper-stack .philosophy-closing p {
+  margin: 0 0 25px;
+
+  font-size: .94rem;
+  line-height: 1.85;
+}
+
+.philosophy-paper-stack .philosophy-sheet p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* --------------------------------
+   LEAF 01 / FOUND PAPER
+   -------------------------------- */
+
+.philosophy-sheet--found {
+  --shift: -18px;
+  --tilt: -1.4deg;
+
+  z-index: 4;
+
+  background: #fffaf0 !important;
+}
+
+/* A bit of tape at the top */
+
+.philosophy-sheet--found::before {
+  content: "";
+  position: absolute;
+
+  top: -12px;
+  left: 41%;
+
+  width: 100px;
+  height: 23px;
+
+  background: rgba(202, 184, 145, .58);
+
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+
+/* --------------------------------
+   LEAF 02 / NOTEBOOK PAPER
+   -------------------------------- */
+
+.philosophy-sheet--notebook {
+  --shift: 22px;
+  --tilt: 1.2deg;
+
+  z-index: 3;
+
+  background-color: #f5f3e9 !important;
+
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 35px,
+      rgba(129, 159, 164, .10) 36px,
+      transparent 37px
+    );
+
+  border-left: 4px double #c6aaa4 !important;
+}
+
+
+/* --------------------------------
+   LEAF 03 / A LOOSE LETTER
+   -------------------------------- */
+
+.philosophy-sheet--letter {
+  --shift: -11px;
+  --tilt: -.8deg;
+
+  z-index: 2;
+
+  background: #fffdf5 !important;
+}
+
+/* Another crooked piece of tape */
+
+.philosophy-sheet--letter::before {
+  content: "";
+  position: absolute;
+
+  top: -10px;
+  right: 19%;
+
+  width: 85px;
+  height: 21px;
+
+  background: rgba(195, 179, 147, .48);
+
+  transform: rotate(-8deg);
+}
+
+
+/* --------------------------------
+   LEAF 04 / THE LAST SHEET
+   -------------------------------- */
+
+.philosophy-sheet--closing {
+  --shift: 17px;
+  --tilt: 1.3deg;
+
+  z-index: 1;
+
+  background: #f8f2e5 !important;
+}
+
+/* A small folded paper corner */
+
+.philosophy-sheet--closing::after {
+  content: "";
+  position: absolute;
+
+  top: -1px;
+  right: -1px;
+
+  width: 36px;
+  height: 36px;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 49%,
+      #d8c8ae 50%,
+      #fdf9ef 52% 100%
+    );
+
+  box-shadow: -2px 2px 3px rgba(65, 50, 35, .09);
+}
+
+
+/* --------------------------------
+   THE QUOTED THOUGHTS
+   -------------------------------- */
+
+.philosophy-paper-stack .philosophy-sheet blockquote {
+  margin: 42px 0 35px;
+  padding: 20px 0 20px 23px;
+
+  background: transparent;
+  border-left: 2px solid #c8baa2;
+  box-shadow: none;
+
+  color: #514a3d;
+}
+
+.philosophy-paper-stack .philosophy-sheet blockquote p {
+  margin: 0 0 22px;
+  font-size: .91rem;
+  line-height: 1.9;
+}
+
+.philosophy-paper-stack .philosophy-sheet blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* --------------------------------
+   THE FINAL WORDS
+   -------------------------------- */
+
+.philosophy-paper-stack .philosophy-closing {
+  margin-top: 45px;
+}
+
+
+/* THE RESIDENT IS UNDERNEATH */
+
+.philosophy-paper-stack > .resident-mark {
+  align-self: center;
+  margin-top: 70px;
+}
+
+
+/* --------------------------------
+   SMALLER WINDOWS
+   -------------------------------- */
+
+@media (max-width: 650px) {
+
+  .philosophy-paper-stack {
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .philosophy-paper-stack .philosophy-sheet {
+    width: calc(100% - 16px);
+
+    padding: 32px 23px 50px;
+    margin-top: -13px;
+
+    /* Keep the crookedness, avoid overflow */
+    --shift: 0px;
+  }
+
+  .philosophy-paper-stack .philosophy-sheet:first-child {
+    margin-top: 0;
+  }
+
+  .philosophy-paper-stack .sheet-index {
+    margin-bottom: 30px;
+  }
+
+  .philosophy-paper-stack .philosophy-sheet > p:not(.sheet-index),
+  .philosophy-paper-stack .philosophy-closing p {
+    font-size: .88rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* --------------------------------
+   REDUCED MOTION
+   -------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .philosophy-paper-stack .philosophy-sheet {
+    transition: none;
+  }
+
+}

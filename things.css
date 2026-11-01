@@ -1055,3 +1055,56 @@
   }
 }
 
+
+/* --------------------------------
+   THE KEY HAS TURNED UP AGAIN
+   -------------------------------- */
+
+.object-grid .drawer-old-key {
+  position: absolute;
+
+  width: 100px;
+  top: 57%;
+  left: 49%;
+
+  z-index: 6;
+
+  display: block;
+
+  transform: rotate(24deg);
+  transition: transform 180ms ease;
+}
+
+.drawer-old-key img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  filter: drop-shadow(
+    2px 3px 2px rgba(40, 30, 20, .2)
+  );
+}
+
+.drawer-old-key:hover,
+.drawer-old-key:focus-visible {
+  transform: rotate(12deg) translateY(-5px);
+}
+
+.drawer-old-key:focus-visible {
+  outline: 1px dashed #786b52;
+  outline-offset: 6px;
+}
+
+@media (max-width: 700px) {
+  .object-grid .drawer-old-key {
+    width: 65px;
+    top: 55%;
+    left: 53%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-old-key {
+    transition: none;
+  }
+}

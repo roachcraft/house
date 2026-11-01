@@ -827,3 +827,55 @@
   grid-row: 5;
   --tilt: -4deg;
 }
+
+
+/* --------------------------------
+   A SMALL, UNINVITED RESIDENT
+   -------------------------------- */
+
+.drawer-roach {
+  position: absolute;
+
+  width: 100px;
+  top: 18%;
+  left: 65%;
+
+  z-index: 4;
+
+  transform: rotate(-28deg);
+  transition: transform 180ms ease;
+}
+
+.drawer-roach img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  filter: drop-shadow(
+    2px 3px 2px rgba(40, 30, 20, .22)
+  );
+}
+
+.drawer-roach:hover,
+.drawer-roach:focus-visible {
+  transform: rotate(-12deg) translateY(-4px);
+}
+
+.drawer-roach:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 5px;
+}
+
+@media (max-width: 700px) {
+  .drawer-roach {
+    width: 70px;
+    top: 15%;
+    left: 66%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-roach {
+    transition: none;
+  }
+}

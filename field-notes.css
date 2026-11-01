@@ -381,3 +381,423 @@ background-repeat: no-repeat, repeat;
   margin-top: 9px;
   text-align: left;
 }
+
+
+/* --------------------------------
+   SEALED CORRESPONDENCE
+   -------------------------------- */
+
+.paper--sealed {
+  background: #e8ddc7;
+  border: 1px solid #bba889;
+  text-align: center;
+}
+
+.paper--sealed .paper-meta {
+  text-align: left;
+  color: #796b57;
+}
+
+.sealed-entry-link {
+  display: block;
+  color: #3a3329;
+  text-decoration: none;
+}
+
+.sealed-entry-link:focus-visible {
+  outline: 2px dashed #70453c;
+  outline-offset: 8px;
+}
+
+.sealed-envelope {
+  position: relative;
+  display: block;
+  width: min(100%, 250px);
+  height: 150px;
+  margin: 12px auto 30px;
+
+  background: #d7bd97;
+  border: 1px solid #b79b75;
+
+  box-shadow: 3px 6px 9px #4d362b30;
+
+  transition: transform 180ms ease;
+}
+
+/* Folded triangular envelope flap */
+.sealed-envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: #efddbd;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 67%
+  );
+
+  z-index: 1;
+}
+
+/* Lower envelope fold */
+.sealed-envelope::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: #e4cba6;
+  clip-path: polygon(
+    0 100%,
+    50% 44%,
+    100% 100%
+  );
+}
+
+.seal-mark {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  place-items: center;
+
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+  background: #813e37;
+  color: #f5dbc8;
+  border: 3px double #bc7867;
+
+  font-size: .86rem;
+  font-style: bold;
+
+  box-shadow: 1px 3px 5px #4b211d40;
+  z-index: 2;
+}
+
+.sealed-entry-link:hover .sealed-envelope,
+.sealed-entry-link:focus-visible .sealed-envelope {
+  transform: translateY(-5px) rotate(2deg);
+}
+
+.sealed-title,
+.sealed-caption,
+.sealed-prompt {
+  display: block;
+}
+
+.sealed-title {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.sealed-caption {
+  color: #756651;
+  font-size: .77rem;
+  margin-bottom: 25px;
+}
+
+.sealed-prompt {
+  font-size: .78rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.paper--sealed .sealed-warning {
+  margin-top: 32px;
+  color: #8b7766;
+  font-size: .64rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sealed-envelope {
+    transition: none;
+  }
+}
+
+
+/* --------------------------------
+   LONG-FORM CORRESPONDENCE
+   -------------------------------- */
+
+.letter-page {
+  max-width: 850px;
+}
+
+.letter-back {
+  display: inline-block;
+  margin-bottom: 46px;
+
+  color: var(--ink, #302e2a);
+  font-size: .8rem;
+}
+
+.letter-sheet {
+  position: relative;
+
+  padding: clamp(30px, 7vw, 75px);
+
+  color: #302d27;
+  background: #fffdf4;
+  border: 1px solid #d9d0bf;
+
+  box-shadow:
+    5px 7px 0 #ded6c8,
+    9px 13px 18px #473c2d21;
+
+  transform: rotate(-.45deg);
+}
+
+/* A bit of tape holding the page */
+.letter-sheet::before {
+  content: "";
+  position: absolute;
+
+  top: -12px;
+  left: 44%;
+
+  width: 95px;
+  height: 24px;
+
+  background: #d7c7a385;
+  transform: rotate(3deg);
+}
+
+.letter-kicker,
+.letter-date {
+  color: #8b8072;
+  font-size: .75rem;
+}
+
+.letter-kicker {
+  margin: 0 0 40px;
+}
+
+.letter-heading h1 {
+  margin: 0 0 26px;
+
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  line-height: 1.35;
+  font-weight: normal;
+}
+
+.letter-date {
+  margin: 0;
+}
+
+.letter-body {
+  margin-top: 65px;
+}
+
+.letter-body p {
+  margin: 0 0 30px;
+
+  font-size: 1rem;
+  line-height: 1.95;
+}
+
+.letter-body .letter-opening {
+  margin-bottom: 45px;
+}
+
+.letter-body .letter-verse {
+  white-space: pre-line;
+  margin: 45px 0;
+  padding-left: 20px;
+  border-left: 1px solid #ddd3c3;
+}
+
+.letter-body .letter-postscript {
+  margin-top: 55px;
+  font-size: .86rem;
+  color: #72685b;
+}
+
+.letter-signature {
+  margin: 70px 0 0;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.letter-endnote {
+  margin: 55px 0 0;
+  text-align: center;
+  color: var(--faded, #89867d);
+  font-size: .75rem;
+}
+
+.letter-endnote a {
+  color: inherit;
+}
+
+@media (max-width: 650px) {
+  .letter-sheet {
+    padding: 40px 25px;
+    transform: none;
+  }
+
+  .letter-body {
+    margin-top: 45px;
+  }
+
+  .letter-body p {
+    font-size: .94rem;
+    line-height: 1.85;
+  }
+}
+
+
+/* --------------------------------
+   SEALED NOTE — THE WHOLE ENVELOPE
+   -------------------------------- */
+
+.notes-desk .paper--sealed {
+  position: relative;
+  box-sizing: border-box;
+  height: 340px;
+  min-height: 340px;
+  padding: 0;
+  overflow: hidden;
+
+  background: #d8ba91;
+  border: 1px solid #ad8d65;
+
+  box-shadow:
+    5px 8px 12px rgba(55, 38, 22, 0.28);
+}
+
+/* Make the whole envelope clickable */
+
+.paper--sealed .sealed-entry-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: #493a2a;
+  text-decoration: none;
+}
+
+.paper--sealed .sealed-entry-link:focus-visible {
+  outline: 2px dashed #70453c;
+  outline-offset: -7px;
+}
+
+/* Envelope now fills the entire card */
+
+.paper--sealed .sealed-envelope {
+  position: absolute;
+  inset: 0;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Upper flap */
+
+.paper--sealed .sealed-envelope::before {
+  background: #efddbd;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 55%
+  );
+  z-index: 1;
+}
+
+/* Lower folded flap */
+
+.paper--sealed .sealed-envelope::after {
+  background: #e2c59e;
+  clip-path: polygon(
+    0 100%,
+    50% 45%,
+    100% 100%
+  );
+  z-index: 2;
+}
+
+/* Wax seal where the folds meet */
+
+.paper--sealed .seal-mark {
+  top: 46%;
+  left: 50%;
+  z-index: 3;
+}
+
+/* Catalog marking directly on the envelope */
+
+.paper--sealed .paper-meta {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 4;
+
+  margin: 0 !important;
+  color: #76654e;
+  pointer-events: none;
+}
+
+/* Writing directly on the envelope */
+
+.paper--sealed .sealed-title,
+.paper--sealed .sealed-caption,
+.paper--sealed .sealed-prompt {
+  position: absolute;
+  z-index: 4;
+  margin: 0;
+}
+
+.paper--sealed .sealed-title {
+  bottom: 92px;
+  left: 15px;
+  right: 15px;
+  text-align: center;
+  font-size: .98rem;
+}
+
+.paper--sealed .sealed-caption {
+  bottom: 65px;
+  left: 15px;
+  right: 15px;
+  text-align: center;
+  font-size: .72rem;
+  color: #766049;
+}
+
+.paper--sealed .sealed-prompt {
+  right: 18px;
+  bottom: 17px;
+  font-size: .76rem;
+}
+
+/* Temporary security notice */
+
+.paper--sealed .sealed-warning {
+  position: absolute;
+  left: 18px;
+  bottom: 17px;
+  z-index: 4;
+
+  margin: 0;
+  color: #84694f;
+  font-size: .6rem;
+  pointer-events: none;
+}
+
+/* Let the existing paper hover rotate
+   the entire envelope, not its inner flap */
+
+.paper--sealed .sealed-entry-link:hover .sealed-envelope,
+.paper--sealed .sealed-entry-link:focus-visible .sealed-envelope {
+  transform: none;
+}

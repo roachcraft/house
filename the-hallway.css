@@ -503,13 +503,23 @@
 }
 
 .hallway-scratch p {
-  max-width: 150px;
-  padding: 8px;
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 0;
+
+  width: 150px;
+  max-width: 55vw;
+  margin: 0;
+  padding: 9px;
 
   background: #eee6d5;
+  border: 1px solid #c9bfac;
+
+  color: #51493b;
   font-size: 0.67rem;
   line-height: 1.6;
 
+  box-shadow: 2px 3px 0 rgba(39, 30, 19, 0.10);
 }
 
 /* THE WAY BACK */

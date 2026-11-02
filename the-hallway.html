@@ -367,5 +367,22 @@
 </script>
 
 
+<script>
+  // The key and scratch stop talking when you look away.
+
+  document.addEventListener("click", (event) => {
+    document.querySelectorAll(
+      ".hallway-key, .hallway-scratch"
+    ).forEach((item) => {
+
+      if (item.open && !item.contains(event.target)) {
+        item.open = false;
+      }
+
+    });
+  });
+</script>
+
+
 </body>
 </html>

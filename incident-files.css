@@ -1,0 +1,400 @@
+
+/* ====================================
+   ROACHCRAFT / INCIDENT FILES
+   ==================================== */
+
+
+/* ------------------------------------
+   MANILA DOCUMENT ENVELOPE
+   ------------------------------------ */
+
+.case-envelope {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+
+  width: min(100%, 320px);
+  min-height: 405px;
+
+  margin: 10px auto;
+  padding: 128px 29px 28px;
+
+  color: #4a3621;
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(86, 58, 27, .09),
+      transparent 7%,
+      transparent 93%,
+      rgba(86, 58, 27, .07)
+    ),
+    linear-gradient(
+      145deg,
+      #e1c18a,
+      #cda76e
+    );
+
+  border: 1px solid #aa8550;
+
+  box-shadow:
+    4px 5px 0 rgba(63, 46, 23, .10),
+    9px 13px 20px rgba(45, 30, 15, .20);
+
+  transform: rotate(-2deg);
+  transform-origin: center;
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.case-envelope:hover,
+.case-envelope:focus-visible {
+  color: #4a3621;
+  transform: rotate(0deg) translateY(-5px);
+
+  box-shadow:
+    5px 7px 0 rgba(63, 46, 23, .10),
+    12px 18px 25px rgba(45, 30, 15, .23);
+}
+
+
+/* THE TOP FOLD / TRIANGULAR FLAP */
+
+.case-envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 106px;
+
+  background: linear-gradient(
+    #e8cd99,
+    #c6a16d
+  );
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 95%
+  );
+
+  filter: drop-shadow(
+    0 2px 2px rgba(75, 53, 28, .20)
+  );
+
+  pointer-events: none;
+}
+
+
+/* BRASS FASTENER */
+
+.case-envelope-clasp {
+  position: absolute;
+  top: 80px;
+  left: calc(50% - 9px);
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 35% 30%,
+    #f2dc91,
+    #ae873c 65%,
+    #725625
+  );
+
+  border: 1px solid #80632e;
+
+  box-shadow:
+    0 2px 3px rgba(60, 43, 19, .25);
+
+  pointer-events: none;
+}
+
+
+/* ARCHIVAL MARKINGS */
+
+.case-envelope-meta {
+  font-size: .66rem;
+  letter-spacing: .1em;
+  opacity: .75;
+}
+
+.case-envelope-title {
+  display: block;
+
+  margin-top: 23px;
+
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: .025em;
+}
+
+.case-envelope-subtitle {
+  margin-top: 17px;
+
+  font-size: .91rem;
+  line-height: 1.6;
+}
+
+.case-envelope-stamp {
+  align-self: flex-end;
+
+  margin-top: 25px;
+  padding: 5px 10px;
+
+  color: #985344;
+  border: 2px solid #985344;
+
+  font-size: .76rem;
+  letter-spacing: .08em;
+
+  transform: rotate(-8deg);
+}
+
+.case-envelope-open {
+  display: block;
+  margin-top: auto;
+  padding-top: 30px;
+
+  font-size: .78rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+/* ------------------------------------
+   THE SEPARATE INCIDENT DOCUMENT
+   ------------------------------------ */
+
+.incident-page {
+  max-width: 950px;
+}
+
+.incident-paper {
+  position: relative;
+  box-sizing: border-box;
+
+  width: min(690px, 100%);
+  margin: 55px auto 50px;
+
+  padding:
+    clamp(35px, 7vw, 75px)
+    clamp(27px, 7vw, 70px);
+
+  color: #302d27;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(139, 113, 75, .055),
+      transparent 28%
+    ),
+    #faf6ea;
+
+  border: 1px solid #d4c9b3;
+
+  box-shadow:
+    5px 7px 0 rgba(82, 65, 42, .07),
+    12px 17px 25px rgba(49, 39, 26, .15);
+
+  transform: rotate(-.35deg);
+}
+
+
+/* DOCUMENT LABELS */
+
+.incident-paper-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  color: #827462;
+
+  font-size: .67rem;
+  letter-spacing: .075em;
+}
+
+.incident-paper-stamp {
+  display: inline-block;
+
+  margin: 30px 0 8px;
+  padding: 5px 10px;
+
+  color: #925147;
+  border: 2px solid #925147;
+
+  font-size: .72rem;
+  letter-spacing: .09em;
+
+  transform: rotate(-6deg);
+}
+
+.incident-paper h1 {
+  margin: 20px 0 15px;
+
+  color: #302d27;
+
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  line-height: 1.25;
+}
+
+.incident-document-type {
+  margin-bottom: 42px;
+
+  color: #817563;
+  font-size: .79rem;
+  font-style: italic;
+}
+
+
+/* FILE METADATA */
+
+.incident-facts {
+  margin: 0 0 45px;
+  padding: 20px 0;
+
+  border-top: 1px solid #c9bda7;
+  border-bottom: 1px solid #c9bda7;
+}
+
+.incident-facts > div {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 12px;
+
+  margin: 0 0 12px;
+}
+
+.incident-facts > div:last-child {
+  margin-bottom: 0;
+}
+
+.incident-facts dt {
+  color: #857865;
+  font-size: .78rem;
+}
+
+.incident-facts dd {
+  margin: 0;
+  font-size: .84rem;
+  line-height: 1.6;
+}
+
+
+/* INCIDENT ACCOUNT */
+
+.incident-narrative p {
+  margin: 0 0 25px;
+
+  font-size: .94rem;
+  line-height: 1.9;
+}
+
+.incident-narrative p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ATTACHED EVIDENCE NOTE */
+
+.incident-evidence {
+  margin: 50px 0 40px;
+  padding: 23px 25px;
+
+  background: #f0ead9;
+  border-left: 3px solid #b7a483;
+}
+
+.incident-evidence-label {
+  color: #84755f;
+  font-size: .7rem;
+  letter-spacing: .05em;
+}
+
+.incident-evidence p {
+  line-height: 1.75;
+}
+
+.incident-evidence a,
+.incident-return a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+
+/* END OF REPORT */
+
+.incident-document-footer {
+  margin-top: 42px;
+  padding-top: 18px;
+
+  border-top: 1px solid #c9bda7;
+
+  color: #786e5f;
+  font-size: .76rem;
+}
+
+.incident-document-footer p {
+  margin: 0 0 7px;
+}
+
+.incident-last-word {
+  margin-top: 28px !important;
+  font-style: italic;
+}
+
+.incident-return {
+  margin: 30px auto 65px;
+  text-align: center;
+  font-size: .83rem;
+}
+
+
+/* ------------------------------------
+   MOBILE
+   ------------------------------------ */
+
+@media (max-width: 650px) {
+
+  .case-envelope {
+    min-height: 380px;
+  }
+
+  .incident-paper {
+    margin-top: 30px;
+    transform: none;
+  }
+
+  .incident-facts > div {
+    grid-template-columns: 75px 1fr;
+    gap: 9px;
+  }
+
+  .incident-narrative p {
+    font-size: .88rem;
+    line-height: 1.8;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-envelope {
+    transition: none;
+  }
+}
+
+.wall-piece--dossier::before,
+.wall-piece--dossier::after {
+  display: none !important;
+}

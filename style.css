@@ -701,8 +701,8 @@ body {
   cursor: url("./assets/cursors/cockroach.cur"), auto;
 }
 
-/* Keep the roach visible on clickable things */
+/* The visitor discovers something touchable */
 
 body :is(a, button, summary, [role="button"]) {
-  cursor: url("./assets/cursors/cockroach.cur"), pointer !important;
+  cursor: url("./assets/cursors/cockroach-touch.cur"), pointer !important;
 }

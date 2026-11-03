@@ -459,14 +459,14 @@
   left: 48%;
 }
 
-/* an unnecessarily large safety pin */
+/* an unnecessarily open safety pin */
 
 .clutter--safety-pin {
   --size: 145px;
   --angle: 27deg;
 
   top: 42%;
-  right: -5%;
+  right: -1%;
 
   z-index: 5;
 }
@@ -653,7 +653,7 @@
   --size: 100px;
   --angle: -24deg;
 
-  top: 27%;
+  top: 40%;
   left: 51%;
 }
 
@@ -671,9 +671,9 @@
 
 .clutter--receipt {
   --size: 200px;
-  --angle: -12deg;
+  --angle: 12deg;
 
-  bottom: 3%;
+  bottom: 5%;
   left: 40%;
 }
 
@@ -836,8 +836,8 @@
 .drawer-roach {
   position: absolute;
 
-  width: 100px;
-  top: 18%;
+  width: 140px;
+  top: 85%;
   left: 65%;
 
   z-index: 4;
@@ -1064,8 +1064,8 @@
   position: absolute;
 
   width: 100px;
-  top: 57%;
-  left: 49%;
+  top: 85%;
+  left: 33%;
 
   z-index: 6;
 
@@ -1106,5 +1106,104 @@
 @media (prefers-reduced-motion: reduce) {
   .drawer-old-key {
     transition: none;
+  }
+}
+
+
+/* --------------------------------
+   THE LOWER DRAWER HAS ACQUIRED JUNK
+   -------------------------------- */
+
+/* Keep debris behind the actual artwork */
+
+.drawer-additions .drawer-clutter {
+  z-index: 0;
+}
+
+.drawer-additions > .object-card {
+  z-index: 1;
+}
+
+/* An abandoned writing instrument */
+
+.drawer-additions .clutter--pencil-stub {
+  --size: 225px;
+  --angle: -38deg;
+  top: 6%;
+  left: 36%;
+}
+
+/* Something that was probably once a drink */
+
+.drawer-additions .clutter--bottle-cap {
+  --size: 190px;
+  --angle: 21deg;
+  top: 33%;
+  left: 26%;
+}
+
+/* Somebody is watching */
+
+.drawer-additions .clutter--googly-eye-1 {
+  --size: 65px;
+  --angle: -14deg;
+  top: 40%;
+  left: 10%;
+}
+
+.drawer-additions .clutter--googly-eye-2 {
+  --size: 80px;
+  --angle: 18deg;
+  top: 88%;
+  right: 10%;
+}
+
+/* Correspondence of uncertain origin */
+
+.drawer-additions .clutter--stamp-1 {
+  --size: 85px;
+  --angle: -17deg;
+  top: 23%;
+  left: 3%;
+}
+
+.drawer-additions .clutter--stamp-2 {
+  --size: 100px;
+  --angle: 12deg;
+  top: 77%;
+  right: 4%;
+}
+
+.drawer-additions .clutter--stamp-3 {
+  --size: 75px;
+  --angle: -29deg;
+  top: 60%;
+  left: 49%;
+}
+
+/* Smaller debris for smaller drawers */
+
+@media (max-width: 700px) {
+
+  .drawer-additions .clutter--pencil-stub {
+    --size: 130px;
+  }
+
+  .drawer-additions .clutter--bottle-cap {
+    --size: 150px;
+  }
+
+  .drawer-additions .clutter--googly-eye-1 {
+    --size: 45px;
+  }
+
+  .drawer-additions .clutter--googly-eye-2 {
+    --size: 55px;
+  }
+
+  .drawer-additions .clutter--stamp-1,
+  .drawer-additions .clutter--stamp-2,
+  .drawer-additions .clutter--stamp-3 {
+    --size: 60px;
   }
 }

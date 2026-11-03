@@ -391,3 +391,11 @@
     min-height: 0;
   }
 }
+
+/* Small notes tucked into the philosophy papers */
+
+.philosophy-paper-stack .philosophy-sheet > p.small-note {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--faded);
+}

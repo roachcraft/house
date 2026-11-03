@@ -58,9 +58,16 @@
   transition: transform 180ms ease, filter 180ms ease;
 }
 
+/* STATIC SLOTS / these labels identify a position, NOT an artwork.
+   things.js shuffles the images, captions, and links between slots.
+   Upper drawer: slots 01–04; lower drawer: slots 05–13.
+   To change a location, edit the grid-row/column, margins, or --tilt
+   for that slot, not for the artwork currently visible in it. */
+
 /* A lopsided arrangement — not a two-column gallery with offsets. */
 
-.object-card--broccoli {
+/* SLOT 01 / upper drawer · row 1, left */
+.object-card--slot-01 {
   grid-column: 1 / span 6;
   grid-row: 1;
   margin-top: 20px;
@@ -68,7 +75,8 @@
   z-index: 3;
 }
 
-.object-card--fearless {
+/* SLOT 02 / upper drawer · row 1, right */
+.object-card--slot-02 {
   grid-column: 9 / span 4;
   grid-row: 1;
   margin-top: 133px;
@@ -76,7 +84,8 @@
   z-index: 2;
 }
 
-.object-card--dirty-thoughts {
+/* SLOT 03 / upper drawer · row 2, left */
+.object-card--slot-03 {
   grid-column: 2 / span 5;
   grid-row: 2;
   margin-top: -18px;
@@ -84,7 +93,8 @@
   z-index: 2;
 }
 
-.object-card--being-human {
+/* SLOT 04 / upper drawer · row 2, right */
+.object-card--slot-04 {
   grid-column: 8 / span 5;
   grid-row: 2;
   margin-top: -72px;
@@ -103,16 +113,16 @@
   box-shadow: 5px 7px 0 rgb(69 63 43 / 9%);
 }
 
-.object-card--fearless figure {
+.object-card--slot-02 figure {
   background: #f1eddf;
   padding-bottom: 24px;
 }
 
-.object-card--dirty-thoughts figure {
+.object-card--slot-03 figure {
   background: #f8f1dc;
 }
 
-.object-card--being-human figure {
+.object-card--slot-04 figure {
   background: #fdfbf6;
   padding: 11px 11px 20px;
 }
@@ -268,22 +278,22 @@
     padding: 12px 18px 30px;
   }
 
-  .object-card--broccoli {
+  .object-card--slot-01 {
     width: 88%;
     margin: 0 0 0 1%;
   }
 
-  .object-card--fearless {
+  .object-card--slot-02 {
     width: 73%;
     margin: 0 0 0 auto;
   }
 
-  .object-card--dirty-thoughts {
+  .object-card--slot-03 {
     width: 82%;
     margin: 0 0 0 0;
   }
 
-  .object-card--being-human {
+  .object-card--slot-04 {
     width: 90%;
     margin: 0 0 0 auto;
   }
@@ -499,8 +509,7 @@
 
   .clutter--thread {
     --size: 155px;
-    top: 74%;
-    left: -14px;
+    top: 77%;
   }
 }
 
@@ -682,20 +691,20 @@
 @media (max-width: 700px) {
 
   .clutter--battery {
-    --size: 70px;
-    top: 27%;
-    left: 53%;
+    --size: 100px;
+    top: 25%;
+    left: 5%;
   }
 
   .clutter--scrunchie {
-    --size: 120px;
-    top: 59%;
+    --size: 200px;
+    top: 55%;
     right: -5%;
   }
 
   .clutter--receipt {
-    --size: 150px;
-    bottom: 4%;
+    --size: 200px;
+    bottom: -13%;
     left: 7%;
   }
 
@@ -729,13 +738,15 @@
 
 /* FIRST PILE */
 
-.drawer-additions .object-card--banana-love {
+/* SLOT 05 / lower drawer · row 1, left */
+.drawer-additions .object-card--slot-05 {
   grid-column: 1 / span 5;
   grid-row: 1;
   --tilt: -5deg;
 }
 
-.drawer-additions .object-card--punk-feminist {
+/* SLOT 06 / lower drawer · row 1, right */
+.drawer-additions .object-card--slot-06 {
   grid-column: 8 / span 5;
   grid-row: 1;
   margin-top: 90px;
@@ -744,13 +755,15 @@
 
 /* SECOND PILE */
 
-.drawer-additions .object-card--just-allergies {
+/* SLOT 07 / lower drawer · row 2, left */
+.drawer-additions .object-card--slot-07 {
   grid-column: 2 / span 4;
   grid-row: 2;
   --tilt: 7deg;
 }
 
-.drawer-additions .object-card--in-the-world {
+/* SLOT 08 / lower drawer · row 2, right */
+.drawer-additions .object-card--slot-08 {
   grid-column: 7 / span 6;
   grid-row: 2;
   margin-top: 45px;
@@ -759,14 +772,16 @@
 
 /* THIRD PILE */
 
-.drawer-additions .object-card--fall-and-cookie {
+/* SLOT 09 / lower drawer · row 3, left */
+.drawer-additions .object-card--slot-09 {
   grid-column: 1 / span 5;
   grid-row: 3;
   margin-top: 35px;
   --tilt: -6deg;
 }
 
-.drawer-additions .object-card--asshat {
+/* SLOT 10 / lower drawer · row 3, right */
+.drawer-additions .object-card--slot-10 {
   grid-column: 7 / span 6;
   grid-row: 3;
   --tilt: 4deg;
@@ -806,13 +821,15 @@
    TWO MORE THINGS FOUND
    -------------------------------- */
 
-.drawer-additions .object-card--fruit-collage {
+/* SLOT 11 / lower drawer · row 4, left */
+.drawer-additions .object-card--slot-11 {
   grid-column: 2 / span 5;
   grid-row: 4;
   --tilt: 5deg;
 }
 
-.drawer-additions .object-card--light-your-power {
+/* SLOT 12 / lower drawer · row 4, right */
+.drawer-additions .object-card--slot-12 {
   grid-column: 8 / span 5;
   grid-row: 4;
   margin-top: 70px;
@@ -822,7 +839,8 @@
 
 /* ONE LAST THING, FOR NOW */
 
-.drawer-additions .object-card--purple-glass {
+/* SLOT 13 / lower drawer · row 5, center */
+.drawer-additions .object-card--slot-13 {
   grid-column: 4 / span 6;
   grid-row: 5;
   --tilt: -4deg;
@@ -868,7 +886,7 @@
 
 @media (max-width: 700px) {
   .drawer-roach {
-    width: 70px;
+    width: 120px;
     top: 15%;
     left: 66%;
   }
@@ -1097,8 +1115,8 @@
 
 @media (max-width: 700px) {
   .object-grid .drawer-old-key {
-    width: 65px;
-    top: 55%;
+    width: 96px;
+    top: 65%;
     left: 53%;
   }
 }
@@ -1204,6 +1222,54 @@
   .drawer-additions .clutter--stamp-1,
   .drawer-additions .clutter--stamp-2,
   .drawer-additions .clutter--stamp-3 {
-    --size: 60px;
+    --size: 90px;
+  }
+}
+
+
+
+/* --------------------------------
+   MOBILE DRAWER / LESS SPILLAGE
+   -------------------------------- */
+
+@media (max-width: 700px) {
+
+  /* Make both piles behave consistently */
+
+  .object-grid,
+  .drawer-additions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Remove conflicting grid-specific offsets */
+
+  .object-grid > .object-card {
+    margin-top: 0;
+  }
+
+  /* Keep the top clutter inside the drawer */
+
+  .object-grid .clutter--buttons {
+    --size: 200px;
+    left: auto;
+    right: -3%;
+  }
+
+  .object-grid .clutter--safety-pin {
+    right: 0;
+  }
+
+  .object-grid .clutter--thread {
+    left: -3;
+  }
+
+  /* Prevent any remaining rotated debris
+     from creating horizontal page scrolling */
+
+  html,
+  body {
+    overflow-x: clip;
   }
 }

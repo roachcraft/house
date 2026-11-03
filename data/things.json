@@ -1,1 +1,15 @@
-[]
+
+[
+  {
+    "id": "test-001",
+    "title": "a suspicious new arrival",
+    "image": "assets/images/broccoli-etc.webp",
+    "alt": "An existing collage pin used to test the archive",
+    "detail": "test specimen · please disregard",
+    "date": "2026-11-03",
+    "body": [
+      "this object has been filed automatically.",
+      "the archive department is cautiously optimistic."
+    ]
+  }
+]

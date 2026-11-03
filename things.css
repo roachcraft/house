@@ -1108,3 +1108,31 @@
     transition: none;
   }
 }
+
+
+/* --------------------------------
+   NEW ARRIVALS / AUTOMATIC FILING
+   -------------------------------- */
+
+/* Left-hand pile */
+
+.drawer-additions .object-card--slot-left {
+  grid-column: 1 / span 5;
+  --tilt: -5deg;
+}
+
+/* Right-hand pile */
+
+.drawer-additions .object-card--slot-right {
+  grid-column: 8 / span 5;
+  margin-top: 55px;
+  --tilt: 6deg;
+}
+
+/* The drawer is smaller on small screens */
+
+@media (max-width: 700px) {
+  .drawer-additions .object-card--autofiled {
+    margin-top: 0;
+  }
+}

@@ -803,3 +803,11 @@ background-repeat: no-repeat, repeat;
 }
 
 
+
+/* Small notes tucked into the field notes */
+
+.notes-desk .desk-paper p.small-note {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--faded);
+}
